@@ -72,7 +72,7 @@ extension RecruitmentCell {
     func fillData(data: DataListRecruitmentPost) {
         avatarImage.image = UIImage(named: data.userAvatar)
         nameLabel.text = data.userName
-        timeLabel.text = data.createdAt.dateFromMiliseconds.toString(formatter: .dayMonthYear)
+        timeLabel.text = data.createdAt.dateFromTimestamp.toString(formatter: .dayMonthYear)
         careerLabel.text = data.career
         companyNameLabel.text = data.companyName
         salaryLabel.text = data.wage
@@ -86,7 +86,7 @@ extension RecruitmentCell {
     func fillDataDetail(data: DataDetailRecruitmentPost) {
         avatarImage.image = UIImage(named: data.userAvatar)
         nameLabel.text = data.userName
-        timeLabel.text = data.createdAt.dateFromMiliseconds.toString(formatter: .dayMonthYear)
+        timeLabel.text = data.createdAt.dateFromTimestamp.toString(formatter: .dayMonthYear)
         careerLabel.text = data.career
         companyNameLabel.text = data.companyName
         salaryLabel.text = data.wage

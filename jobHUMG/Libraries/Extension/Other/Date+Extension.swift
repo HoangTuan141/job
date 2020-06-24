@@ -15,6 +15,10 @@ extension Date {
     static let currentCalendar = Calendar(identifier: .gregorian)
     static let currentTimeZone = TimeZone.ReferenceType.local
     
+    var timeStamp: Int? {
+        return Int(self.timeIntervalSince1970)
+    }
+    
     var currentAge: Int? {
         let ageComponents = Date.currentCalendar.dateComponents([.year], from: self, to: Date())
         return ageComponents.year

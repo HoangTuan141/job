@@ -16,6 +16,10 @@ extension Int {
         return Date(timeIntervalSince1970: (Double(self) / 1000.0))
     }
     
+    var dateFromTimestamp: Date {
+        return NSDate(timeIntervalSince1970: TimeInterval(self)) as Date
+    }
+    
     func addCommaWith(separator: String = ",") -> String? {
         let numberFormatter = NumberFormatter()
         numberFormatter.groupingSeparator = separator
