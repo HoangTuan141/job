@@ -9,6 +9,7 @@
 import UIKit
 
 class RegisterVC: UIViewController {
+    
     //MARK: - OUTLET
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -22,7 +23,6 @@ class RegisterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        
     }
     
     //MARK: - FUNCTION
@@ -41,8 +41,11 @@ class RegisterVC: UIViewController {
     
     @IBAction func registerPressed(_ sender: Any) {
         RegisterAPI(email: emailTextField.text!, password: passwordTextField.text!, firstName: firstNameTextField.text!, lastName: lastNameTextField.text!).excute(target: self, success: { [weak self] response in
+            self?.showAlert(title: "Thành công", subTitle: "Bạn đã đăng ký tài khoản thành công", titleButton: "OK", completion: {
+                self?.navigationController?.popViewController(animated: true)
+            })
         }, error: { [weak self] error in
-            
+            self?.showAlert(title: "Thất bại", subTitle: "Đăng ký tài khoản thất bại. Vui lòng thử lại", titleButton: "OK", completion: nil)
         })
     }
     
@@ -50,14 +53,8 @@ class RegisterVC: UIViewController {
 
 extension RegisterVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == emailTextField {
-            passwordTextField.becomeFirstResponder()
-        } else if textField == passwordTextField {
-            lastNameTextField.becomeFirstResponder()
-        } else if textField == lastNameTextField {
-            firstNameTextField.becomeFirstResponder()
-        } else if textField == firstNameTextField {
-            firstNameTextField.resignFirstResponder()
+        if textField == emailTextField || textField == passwordTextField || textField == lastNameTextField || textField == firstNameTextField{
+            textField.resignFirstResponder()
         }
         return true
     }

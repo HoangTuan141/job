@@ -16,12 +16,15 @@ class RecruitmentVC: UIViewController {
     // MARK: - Variable
     private var listPost = [DataListRecruitmentPost]()
     private var refreshControl = UIRefreshControl()
-    private var isShowLoading = true
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getListRecruitmentPost()
     }
     
@@ -37,7 +40,6 @@ class RecruitmentVC: UIViewController {
     }
     
     private func getListRecruitmentPost() {
-        if isShowLoading { self.showLoading() }
         ListRecruitmentPostAPI().excute(target: self, success: { [weak self] response in
             self?.listPost = response!.data
             self?.tableView.reloadData()
@@ -48,7 +50,6 @@ class RecruitmentVC: UIViewController {
     }
     
     private func likePost(id: Int) {
-        self.isShowLoading = false
         LikePostAPI(id: id).excute(target: self, success: { [weak self] response in
             self?.getListRecruitmentPost()
         }, error: { [weak self] error in
@@ -56,7 +57,6 @@ class RecruitmentVC: UIViewController {
     }
     
     @objc func refreshListPost() {
-        self.isShowLoading = true
         self.getListRecruitmentPost()
     }
 }

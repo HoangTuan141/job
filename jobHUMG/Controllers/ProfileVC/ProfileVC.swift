@@ -15,7 +15,7 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        // Do any additional setup after loading the view.
+        getUserInformation()
     }
     
     private func setupTableView() {
@@ -27,7 +27,13 @@ class ProfileVC: UIViewController {
         tableView.registerNibCellFor(type: RecruitmentCell.self)
     }
     
-   
+    private func getUserInformation() {
+        GetUserInformationAPI().excute(target: self, success: { response in
+            print(response)
+        }, error: { error in
+            print(error)
+        })
+    }
 }
 extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {

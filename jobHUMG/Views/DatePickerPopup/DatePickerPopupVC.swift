@@ -18,6 +18,7 @@ class DatePickerPopupVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.endEditting()
         date = datePicker.date.toString(formatter: .dayMonthYear) ?? ""
         dateLabel.text = date
     }

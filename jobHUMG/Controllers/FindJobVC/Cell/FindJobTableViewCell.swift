@@ -71,7 +71,7 @@ extension FindJobTableViewCell {
     func fillData(data: DataListPostFindJob) {
         avatarImage.image = UIImage(named: data.userAvatar)
         nameLabel.text = data.userName
-        timeLabel.text = data.createdAt.dateFromMiliseconds.toString(formatter: .dayMonthYear)
+        timeLabel.text = data.createdAt.dateFromTimestamp.toString(formatter: .dayMonthYear)
         careerLabel.text = data.career
         addressLabel.text = data.location
         descriptionLabel.text = data.description
@@ -83,7 +83,7 @@ extension FindJobTableViewCell {
     func fillData(data: DataDetailPostFindJob) {
         avatarImage.image = UIImage(named: data.userAvatar)
         nameLabel.text = data.userName
-        timeLabel.text = data.createdAt.dateFromMiliseconds.toString(formatter: .dayMonthYear)
+        timeLabel.text = data.createdAt.dateFromTimestamp.toString(formatter: .dayMonthYear)
         careerLabel.text = data.career
         addressLabel.text = data.location
         descriptionLabel.text = data.description

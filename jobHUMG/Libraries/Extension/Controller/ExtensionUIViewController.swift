@@ -101,5 +101,17 @@ extension UIViewController {
         }
         self.present(datePickerPopupVC, animated: false, completion: nil)
     }
+    
+    func showAlert(title: String, subTitle: String, titleButton: String, completion: (() -> Void)?) {
+        let alert = AlertNotiVC()
+        alert.modalPresentationStyle = .overCurrentContext
+        alert.titleAlert = title
+        alert.subTitle = subTitle
+        alert.titleButton = titleButton
+        alert.onTapButton = {
+            completion?()
+        }
+        self.present(alert, animated: false, completion: nil)
+    }
 }
 

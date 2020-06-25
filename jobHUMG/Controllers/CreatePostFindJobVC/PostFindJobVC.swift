@@ -17,6 +17,14 @@ class PostFindJobVC: UIViewController {
     @IBOutlet weak var descriptionTextView: PlaceholderTextView!
     @IBOutlet weak var regionTextView: PlaceholderTextView!
     @IBOutlet weak var careerTextField: UITextField!
+    @IBOutlet weak var startDateButton: UIButton!
+    @IBOutlet weak var endDateButton: UIButton!
+    
+    // MARK: - Variable
+    private var startTime = 0
+    private var endTime = 0
+    private var isSelectedStartTime = false
+    private var isSelectedEndTime = false
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -48,9 +56,9 @@ class PostFindJobVC: UIViewController {
     
     private func createPost(career: String, location: String, description: String, startDate: Int, endDate: Int) {
         CreatePostFindJobAPI(career: career, location: location, description: description, startDate: startDate, endDate: endDate).excute(target: self, success: { [weak self] response in
-            print(response)
+            self?.navigationController?.popViewController(animated: true)
         }, error: { [weak self] error in
-            print(error)
+            self?.showAlert(title: "Không tạo được bài viết", subTitle: "Đã có lỗi xảy ra. Vui lòng thử lại", titleButton: "OK", completion: nil)
         })
     }
     
@@ -60,14 +68,40 @@ class PostFindJobVC: UIViewController {
     }
     
     @IBAction func postPressed(_ sender: Any) {
-        createPost(career: careerTextField.text!, location: regionTextView.text!, description: descriptionTextView.textView.text, startDate: 1587426600, endDate: 1597426600)
+        if careerTextField.text!.isEmpty || regionTextView.textView.text!.isEmpty || descriptionTextView.textView.text!.isEmpty || !isSelectedStartTime || !isSelectedEndTime {
+            self.showAlert(title: "Không tạo được bài viết", subTitle: "Vui lòng điền đầy đủ thông tin. Không được để trống", titleButton: "OK", completion: nil)
+        } else {
+            startTime = startDateButton.titleLabel?.text?.toDate(formatter: .dayMonthYear)?.timeStamp ?? 0
+            endTime = endDateButton.titleLabel?.text?.toDate(formatter: .dayMonthYear)?.timeStamp ?? 0
+            createPost(career: careerTextField.text!, location: regionTextView.text!, description: descriptionTextView.textView.text, startDate: startTime, endDate: endTime )
+        }
+    }
+    
+    @IBAction func startTimePressed(_ sender: Any) {
+        self.endEditting()
+        self.dismissKeyboard()
+        self.showDatePicker(onClickChoose: { [weak self] date in
+            self?.startDateButton.setTitle(date, for: .normal)
+            self?.startDateButton.setTitleColor(.black, for: .normal)
+            self?.isSelectedStartTime = true
+        })
+    }
+    
+    @IBAction func endTimePressed(_ sender: Any) {
+        self.endEditting()
+        self.dismissKeyboard()
+        self.showDatePicker(onClickChoose: { [weak self] date in
+            self?.endDateButton.setTitle(date, for: .normal)
+            self?.endDateButton.setTitleColor(.black, for: .normal)
+            self?.isSelectedEndTime = true
+        })
     }
 }
 
 extension PostFindJobVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == careerTextField {
-            regionTextView.textView.becomeFirstResponder()
+            textField.resignFirstResponder()
         }
         return true
     }

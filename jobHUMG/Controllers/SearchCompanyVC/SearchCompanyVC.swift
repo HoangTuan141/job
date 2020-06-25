@@ -13,6 +13,8 @@ class SearchCompanyVC: UIViewController {
     @IBOutlet weak var companyNameTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
+    
+    var listCompany = [DataSearchCompany]()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextField()
@@ -21,7 +23,7 @@ class SearchCompanyVC: UIViewController {
     
     private func setupTextField() {
         companyNameTextField.becomeFirstResponder()
-        companyNameTextField.addTarget(self, action: #selector(searchCompany), for: .editingChanged)
+        companyNameTextField.addTarget(self, action: #selector(search), for: .editingChanged)
     }
     
     private func setupTableView() {
@@ -30,8 +32,24 @@ class SearchCompanyVC: UIViewController {
         tableView.registerNibCellFor(type: SearchCompanyTableCell.self)
     }
     
-    @objc func searchCompany() {
-        
+    @objc func search() {
+        if companyNameTextField.text!.count >= 1 {
+            searchCompany(name: companyNameTextField.text!)
+        } else {
+            self.listCompany.removeAll()
+            self.tableView.reloadData()
+        }
+    }
+    
+    private func searchCompany(name: String) {
+        SearchCompanyAPI(name: name).excute(target: self, success: { [weak self] response in
+            guard let data = response?.data else { return }
+            self?.listCompany = data
+            self?.tableView.reloadData()
+        }, error: { error in
+            self.listCompany.removeAll()
+            self.tableView.reloadData()
+        })
     }
 
     @IBAction func backPressed(_ sender: Any) {
@@ -41,12 +59,12 @@ class SearchCompanyVC: UIViewController {
 
 extension SearchCompanyVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return listCompany.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCompanyTableCell", for: indexPath) as! SearchCompanyTableCell
-        cell.setupCell(image: reviewAvatar[indexPath.row], companyName: reviewName[indexPath.row])
+        cell.setupCell(data: listCompany[indexPath.row])
         return cell
     }
     

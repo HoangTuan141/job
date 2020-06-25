@@ -14,7 +14,6 @@ class LoginVC: UIViewController {
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerLabel: UILabel!
-    @IBOutlet weak var forgetPasswordLabel: UILabel!
     
     //MARK: - LIFECYCLE
     override func viewDidLoad() {
@@ -25,13 +24,9 @@ class LoginVC: UIViewController {
     //MARK: - FUCTION
     private func setupView() {
         registerLabel.underlineAttribute(text: "Đăng ký")
-        forgetPasswordLabel.underlineAttribute(text: "Quên mật khẩu")
         accountTextField.delegate = self
         passwordTextField.delegate = self
         self.endEditting()
-        print("----------------------------")
-        print(UIScreen.main.bounds.height)
-        print("----------------------------")
     }
     
     //MARK: - ACTION
@@ -44,6 +39,7 @@ class LoginVC: UIViewController {
             appDelegate?.window?.rootViewController = tabBar
             appDelegate?.window?.makeKeyAndVisible()
         }, error: { [weak self] error in
+            self?.showAlert(title: "Đăng nhập không thành công", subTitle: "Vui lòng kiểm tra lại tài khoản, mật khẩu", titleButton: "OK", completion: nil)
         })
     }
     
@@ -51,10 +47,6 @@ class LoginVC: UIViewController {
         let registerVC = RegisterVC()
         self.navigationController?.pushViewController(registerVC, animated: true)
     }
-    
-    @IBAction func forgetPasswordPressed(_ sender: Any) {
-    }
-    
 }
 
 extension LoginVC: UITextFieldDelegate {

@@ -24,9 +24,8 @@ class SearchCompanyTableCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setupCell(image: String, companyName: String) {
-//        companyImage.kf.setImage(with: URL(string: image))
-        companyImage.image = UIImage(named: image)
-        companyNameLabel.text = companyName
+    func setupCell(data: DataSearchCompany) {
+        companyImage.kf.setImage(with: URL(string: data.avatar))
+        companyNameLabel.text = data.name
     }
 }

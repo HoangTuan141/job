@@ -16,12 +16,15 @@ class FindJobVC: UIViewController {
     // MARK: - Property
     private var listPostFindJob = [DataListPostFindJob]()
     private var refreshControl = UIRefreshControl()
-    private var isLoading = true
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getListPostFindJob()
     }
 
@@ -37,7 +40,6 @@ class FindJobVC: UIViewController {
     }
     
     private func getListPostFindJob() {
-        if self.isLoading { self.showLoading() }
         ListPostFindJobAPI().excute(target: self, success: { [weak self] response in
             self?.listPostFindJob = response!.data
             self?.tableView.reloadData()
@@ -48,7 +50,6 @@ class FindJobVC: UIViewController {
     }
     
     private func likePost(id: Int) {
-        self.isLoading = false
         LikePostAPI(id: id).excute(target: self, success: { [weak self] response in
             self?.getListPostFindJob()
         }, error: { error in
@@ -56,7 +57,6 @@ class FindJobVC: UIViewController {
     }
     
     @objc func refreshList() {
-        self.isLoading = true
         getListPostFindJob()
     }
 }

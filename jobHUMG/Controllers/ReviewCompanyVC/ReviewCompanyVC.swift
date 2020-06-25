@@ -43,7 +43,7 @@ class ReviewCompanyVC: UIViewController {
             self?.listCompany = response!.data
             self?.tableView.reloadData()
         }, error: { [weak self] response in
-            
+            self?.showAlert(title: "Lỗi", subTitle: "Đã có lỗi xảy ra, vui lòng refresh lại trang.", titleButton: "OK", completion: nil)
         })
     }
     

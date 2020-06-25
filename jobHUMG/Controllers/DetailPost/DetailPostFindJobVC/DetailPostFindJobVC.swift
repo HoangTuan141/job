@@ -28,6 +28,7 @@ class DetailPostFindJobVC: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.showLoading()
         setupView()
         setupTableView()
         getDetailPostFindJob()
@@ -72,8 +73,10 @@ class DetailPostFindJobVC: UIViewController {
             self?.tableView.reloadData()
             self?.refreshControl.endRefreshing()
             self?.tableView.scrollToBottom()
+            self?.hideLoading()
         }, error: { [weak self] error in
             self?.refreshControl.endRefreshing()
+            self?.hideLoading()
         })
     }
     

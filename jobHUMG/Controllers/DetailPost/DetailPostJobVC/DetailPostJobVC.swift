@@ -28,6 +28,7 @@ class DetailPostJobVC: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.showLoading()
         getDetailPost()
         setupView()
         setupTableView()
@@ -76,6 +77,7 @@ class DetailPostJobVC: UIViewController {
     
     private func getDetailPost() {
         DetailRecruitmentPostAPI(id: self.id ?? 0).excute(target: self, success: { [weak self] response in
+            self?.hideLoading()
             guard let data = response?.data else { return }
             self?.detailPost = data
             self?.listComment = data.comment
@@ -83,6 +85,7 @@ class DetailPostJobVC: UIViewController {
             self?.refreshControl.endRefreshing()
             self?.tableView.scrollToBottom()
         }, error: { [weak self] error in
+            self?.hideLoading()
             self?.refreshControl.endRefreshing()
         })
     }
