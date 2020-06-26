@@ -18,11 +18,17 @@ class DetailReviewCompanyVC: UIViewController {
     var id = 0
     private var listReview = [CommentReview]()
     private var detailCompany: DataDetailReviewCompany?
+    private var refreshControl = UIRefreshControl()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getDetailReviewCompany()
     }
     
@@ -38,6 +44,8 @@ class DetailReviewCompanyVC: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.registerNibCellFor(type: ReviewCompanyCell.self)
         tableView.registerNibCellFor(type: ReviewTableViewCell.self)
+        refreshControl.addTarget(self, action: #selector(refreshDetailReviewCompany), for: .valueChanged)
+        tableView.refreshControl = self.refreshControl
     }
     
     private func getDetailReviewCompany() {
@@ -46,9 +54,29 @@ class DetailReviewCompanyVC: UIViewController {
             self?.detailCompany = data
             self?.listReview = data.ratingList
             self?.tableView.reloadData()
+            self?.refreshControl.endRefreshing()
         }, error: { [weak self] error in
             self?.showAlert(title: "Lỗi", subTitle: "Đã có lỗi xảy ra. Vui lòng refresh lại để xem review công ty.", titleButton: "OK", completion: nil)
+            self?.refreshControl.endRefreshing()
         })
+    }
+    
+    private func likeReview(id: Int) {
+        LikeReviewAPI(id: id).excute(target: self, success: { [weak self] response in
+            self?.getDetailReviewCompany()
+        }, error: { error in
+        })
+    }
+    
+    private func disLikeReview(id: Int) {
+        DislikeReviewAPI(id: id).excute(target: self, success: { [weak self] response in
+            self?.getDetailReviewCompany()
+        }, error: { error in
+        })
+    }
+    
+    @objc func refreshDetailReviewCompany() {
+        self.getDetailReviewCompany()
     }
     
     // MARK: - Action
@@ -90,21 +118,21 @@ extension DetailReviewCompanyVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewTableViewCell", for: indexPath) as! ReviewTableViewCell
-            cell.delegate = self
             cell.selectionStyle = .none
             cell.fillData(data: listReview[indexPath.row])
+            
+            cell.onTapLikeButton = {
+                cell.likeLabel.text = "\(self.listReview[indexPath.row].likeCount + 1)"
+                self.likeReview(id: self.listReview[indexPath.row].id)
+            }
+            
+            cell.onTapDisLikeButton = {
+                cell.dislikeLabel.text = "\(self.listReview[indexPath.row].disLikeCount + 1)"
+                self.disLikeReview(id: self.listReview[indexPath.row].id)
+            }
+            
             return cell
         }
-    }
-    
-}
-
-// MARK: - Delegate cell
-extension DetailReviewCompanyVC: ReviewTableCellDelegate {
-    func onClickLike() {
-    }
-    
-    func onClickDislike() {
     }
     
 }

@@ -74,6 +74,7 @@ extension SearchCompanyVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailReviewVC = DetailReviewCompanyVC()
+        detailReviewVC.id = listCompany[indexPath.row].id
         self.navigationController?.pushViewController(detailReviewVC, animated: true)
     }
     

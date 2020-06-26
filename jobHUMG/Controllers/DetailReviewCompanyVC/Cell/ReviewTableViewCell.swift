@@ -9,11 +9,6 @@
 import UIKit
 import Cosmos
 
-protocol ReviewTableCellDelegate: class {
-    func onClickLike()
-    func onClickDislike()
-}
-
 class ReviewTableViewCell: UITableViewCell {
 
     @IBOutlet weak var contentLabel: UILabel!
@@ -23,7 +18,8 @@ class ReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dislikeLabel: UILabel!
     
-    weak var delegate: ReviewTableCellDelegate?
+    var onTapLikeButton: (() -> Void)?
+    var onTapDisLikeButton: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,11 +42,11 @@ class ReviewTableViewCell: UITableViewCell {
     }
     
     @IBAction func likePressed(_ sender: Any) {
-        self.delegate?.onClickLike()
+        self.onTapLikeButton?()
     }
     
     @IBAction func dislikePressed(_ sender: Any) {
-        self.delegate?.onClickDislike()
+        self.onTapDisLikeButton?()
     }
     
 }
