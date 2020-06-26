@@ -31,11 +31,18 @@ class ReviewCompanyCell: UITableViewCell {
         careerLabel.text = data.career
         locationLabel.text = data.address
     }
+    
+    func fillData(data: DataDetailReviewCompany) {
+        companyImage.kf.setImage(with: URL(string: data.avatar))
+        companyNameLabel.text = data.name
+        ratingView.rating = Double(data.ratingStar)
+        ratingView.text = "(\(data.ratingCount))"
+        careerLabel.text = data.career
+        locationLabel.text = data.address
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

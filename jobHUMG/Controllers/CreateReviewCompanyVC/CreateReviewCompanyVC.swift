@@ -19,9 +19,13 @@ class CreateReviewCompanyVC: UIViewController {
     @IBOutlet weak var heightReviewTextView: NSLayoutConstraint!
     @IBOutlet weak var reviewTextView: PlaceholderTextView!
     
+    // MARK: - Variable
+    var id: Int = 0
+    
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.endEditting()
         setupView()
         setupTextView()
     }
@@ -29,6 +33,7 @@ class CreateReviewCompanyVC: UIViewController {
     // MARK: - Method
     private func setupView() {
         navigationView.setGradientBackground(startColor: .greenMainColor, endColor: .rightGradientColor, gradientDirection: .leftToRight)
+        ratingView.isUserInteractionEnabled = true
     }
     
     private func setupTextView() {
@@ -36,6 +41,15 @@ class CreateReviewCompanyVC: UIViewController {
         reviewTextView.heightDidChange = { [weak self] height in
             self?.heightReviewTextView.constant = height > 33 ? height : 33
         }
+    }
+    
+    private func createReview(name: String, content: String, id: Int, star: Int) {
+        CreateReviewAPI(name: name, content: content, id: id, star: star).excute(target: self, success: { [weak self] response in
+            print(response)
+            self?.navigationController?.popViewController(animated: true)
+        }, error: { [weak self] error in
+            self?.showAlert(title: "Lỗi tạo review", subTitle: "Đã có lỗi xảy ra. Vui lòng thử lại", titleButton: "OK", completion: nil)
+        })
     }
     
     
@@ -47,7 +61,11 @@ class CreateReviewCompanyVC: UIViewController {
     }
     
     @IBAction func postPressed(_ sender: Any) {
-        
+        if nameTextField.text!.isEmpty || reviewTextView.textView.text!.isEmpty {
+            self.showAlert(title: "Không thể tạo review", subTitle: "Không được bỏ trống tên hoặc nội dung review", titleButton: "OK", completion: nil)
+        } else {
+            createReview(name: nameTextField.text!, content: reviewTextView.textView.text, id: self.id, star: Int(ratingView.rating))
+        }
     }
     
     

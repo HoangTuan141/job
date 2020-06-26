@@ -124,8 +124,6 @@
 		6728419524342BF200790CEE /* GeneralUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6728411624342BF100790CEE /* GeneralUtils.swift */; };
 		6728419724342BF200790CEE /* SystemUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6728411824342BF100790CEE /* SystemUtils.swift */; };
 		672841A224342BF200790CEE /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6728412B24342BF100790CEE /* SharedData.swift */; };
-		672841A324342BF200790CEE /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6728412D24342BF100790CEE /* DB.swift */; };
-		672841A524342BF200790CEE /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6728412F24342BF100790CEE /* Owner.swift */; };
 		672841AF24342BF200790CEE /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6728414324342BF100790CEE /* CustomView.swift */; };
 		672841B224342BF200790CEE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6728414824342BF100790CEE /* Colors.swift */; };
 		672841B324342BF200790CEE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6728414B24342BF100790CEE /* Localizable.strings */; };
@@ -138,6 +136,11 @@
 		67336B66241F0BBB00507258 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67336B64241F0BBB00507258 /* LaunchScreen.storyboard */; };
 		67B8B640243ABA0200FD9A18 /* PlaceholderTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67B8B63E243ABA0200FD9A18 /* PlaceholderTextView.xib */; };
 		67B8B641243ABA0200FD9A18 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B8B63F243ABA0200FD9A18 /* PlaceholderTextView.swift */; };
+		8E5207CD24A58FFA007A2667 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5207CC24A58FFA007A2667 /* UserManager.swift */; };
+		8E5207D024A5A390007A2667 /* MaritalStatusPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5207CE24A5A390007A2667 /* MaritalStatusPopup.swift */; };
+		8E5207D124A5A390007A2667 /* MaritalStatusPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E5207CF24A5A390007A2667 /* MaritalStatusPopup.xib */; };
+		8E5207D324A5E650007A2667 /* UpdateUserInfoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5207D224A5E650007A2667 /* UpdateUserInfoAPI.swift */; };
+		8E5207D524A5FA35007A2667 /* CreateReivewAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5207D424A5FA35007A2667 /* CreateReivewAPI.swift */; };
 		8E6A82BA24A2EBB10007A597 /* ListCompanyReviewAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A82B924A2EBB10007A597 /* ListCompanyReviewAPI.swift */; };
 		8E6A82BC24A2F58F0007A597 /* UserInformationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A82BB24A2F58F0007A597 /* UserInformationAPI.swift */; };
 		8E9BCFE224A43A210073FBFB /* ScrollViewSmart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9BCFE124A43A210073FBFB /* ScrollViewSmart.swift */; };
@@ -269,8 +272,6 @@
 		6728411624342BF100790CEE /* GeneralUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralUtils.swift; sourceTree = "<group>"; };
 		6728411824342BF100790CEE /* SystemUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemUtils.swift; sourceTree = "<group>"; };
 		6728412B24342BF100790CEE /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
-		6728412D24342BF100790CEE /* DB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
-		6728412F24342BF100790CEE /* Owner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		6728414324342BF100790CEE /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		6728414824342BF100790CEE /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		6728414C24342BF100790CEE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -285,6 +286,11 @@
 		67336B67241F0BBB00507258 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67B8B63E243ABA0200FD9A18 /* PlaceholderTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceholderTextView.xib; sourceTree = "<group>"; };
 		67B8B63F243ABA0200FD9A18 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
+		8E5207CC24A58FFA007A2667 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		8E5207CE24A5A390007A2667 /* MaritalStatusPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MaritalStatusPopup.swift; path = jobHUMG/Models/UserManager/MaritalStatusPopup.swift; sourceTree = SOURCE_ROOT; };
+		8E5207CF24A5A390007A2667 /* MaritalStatusPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MaritalStatusPopup.xib; path = jobHUMG/Models/UserManager/MaritalStatusPopup.xib; sourceTree = SOURCE_ROOT; };
+		8E5207D224A5E650007A2667 /* UpdateUserInfoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserInfoAPI.swift; sourceTree = "<group>"; };
+		8E5207D424A5FA35007A2667 /* CreateReivewAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReivewAPI.swift; sourceTree = "<group>"; };
 		8E6A82B924A2EBB10007A597 /* ListCompanyReviewAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCompanyReviewAPI.swift; sourceTree = "<group>"; };
 		8E6A82BB24A2F58F0007A597 /* UserInformationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationAPI.swift; sourceTree = "<group>"; };
 		8E9BCFE124A43A210073FBFB /* ScrollViewSmart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewSmart.swift; sourceTree = "<group>"; };
@@ -532,6 +538,8 @@
 		0E960925244C9F2900903E19 /* MaritalStatusPopup */ = {
 			isa = PBXGroup;
 			children = (
+				8E5207CE24A5A390007A2667 /* MaritalStatusPopup.swift */,
+				8E5207CF24A5A390007A2667 /* MaritalStatusPopup.xib */,
 			);
 			path = MaritalStatusPopup;
 			sourceTree = "<group>";
@@ -562,6 +570,8 @@
 				8E6A82BB24A2F58F0007A597 /* UserInformationAPI.swift */,
 				8E9BCFED24A48B570073FBFB /* DetailReviewCompanyAPI.swift */,
 				8E9BCFEF24A48F240073FBFB /* SearchCompanyAPI.swift */,
+				8E5207D224A5E650007A2667 /* UpdateUserInfoAPI.swift */,
+				8E5207D424A5FA35007A2667 /* CreateReivewAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -850,9 +860,8 @@
 		6728412924342BF100790CEE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8E5207CB24A58DB9007A2667 /* UserManager */,
 				6728412A24342BF100790CEE /* SharedData */,
-				6728412C24342BF100790CEE /* DB */,
-				6728412F24342BF100790CEE /* Owner.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -863,14 +872,6 @@
 				6728412B24342BF100790CEE /* SharedData.swift */,
 			);
 			path = SharedData;
-			sourceTree = "<group>";
-		};
-		6728412C24342BF100790CEE /* DB */ = {
-			isa = PBXGroup;
-			children = (
-				6728412D24342BF100790CEE /* DB.swift */,
-			);
-			path = DB;
 			sourceTree = "<group>";
 		};
 		6728413624342BF100790CEE /* Controllers */ = {
@@ -1019,6 +1020,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8E5207CB24A58DB9007A2667 /* UserManager */ = {
+			isa = PBXGroup;
+			children = (
+				8E5207CC24A58FFA007A2667 /* UserManager.swift */,
+			);
+			path = UserManager;
+			sourceTree = "<group>";
+		};
 		8E9BCFE324A451E70073FBFB /* Alert */ = {
 			isa = PBXGroup;
 			children = (
@@ -1128,6 +1137,7 @@
 				0E9FE4F22439B2F1006F427C /* PostJobVC.xib in Resources */,
 				8E9BCFEC24A4872A0073FBFB /* SearchPostRecruitmentJobVC.xib in Resources */,
 				67336B63241F0BBB00507258 /* Assets.xcassets in Resources */,
+				8E5207D124A5A390007A2667 /* MaritalStatusPopup.xib in Resources */,
 				0E68CE1624476AFB00BAAAA8 /* SearchCompanyVC.xib in Resources */,
 				0E1DAE8B24372DC90033F1DD /* RegisterVC.xib in Resources */,
 				0E3F0C88243B7BF4001E2B48 /* RecruitmentCell.xib in Resources */,
@@ -1194,14 +1204,15 @@
 				0E1DAE7B24371C720033F1DD /* APIRequest.swift in Sources */,
 				0EE817DC243A2409001F0521 /* FindJobVC.swift in Sources */,
 				0E93C305243DCB06003DE6B8 /* DetailPostJobVC.swift in Sources */,
-				672841A324342BF200790CEE /* DB.swift in Sources */,
 				6728418124342BF200790CEE /* UITableViewCell+Extension.swift in Sources */,
 				6728417524342BF200790CEE /* UIColor+Extension.swift in Sources */,
 				6728417624342BF200790CEE /* Date+Extension.swift in Sources */,
 				0E346947243F7632003C6E8E /* DetailPostFindJobVC.swift in Sources */,
 				6728416C24342BF200790CEE /* ShadowButton.swift in Sources */,
+				8E5207D524A5FA35007A2667 /* CreateReivewAPI.swift in Sources */,
 				67B8B641243ABA0200FD9A18 /* PlaceholderTextView.swift in Sources */,
 				6728416424342BF200790CEE /* BaseTableView.swift in Sources */,
+				8E5207D324A5E650007A2667 /* UpdateUserInfoAPI.swift in Sources */,
 				0EBF21B124A24B7600C96C07 /* CreatePostFindJobAPI.swift in Sources */,
 				0E6A78FA243ED00F001A786B /* CommentTableViewCell.swift in Sources */,
 				0E1DAE8F243736D10033F1DD /* ForgetPasswordVC.swift in Sources */,
@@ -1247,10 +1258,10 @@
 				6728418A24342BF200790CEE /* String+Extension.swift in Sources */,
 				6728417B24342BF200790CEE /* UIImageView+Extension.swift in Sources */,
 				67336B5E241F0BB900507258 /* ViewController.swift in Sources */,
+				8E5207D024A5A390007A2667 /* MaritalStatusPopup.swift in Sources */,
 				0E53983E2444B1B700EC10C3 /* ReviewCompanyCell.swift in Sources */,
 				6728418724342BF200790CEE /* UITableView+Extension.swift in Sources */,
 				0E96092F244CAC9A00903E19 /* ExtensionString.swift in Sources */,
-				672841A524342BF200790CEE /* Owner.swift in Sources */,
 				6728417D24342BF200790CEE /* UIButton+Extension.swift in Sources */,
 				0E68CE06244754DB00BAAAA8 /* DetailReviewCompanyVC.swift in Sources */,
 				0E1DAE7C24371C720033F1DD /* APIService.swift in Sources */,
@@ -1286,6 +1297,7 @@
 				6728416D24342BF200790CEE /* GradientButton.swift in Sources */,
 				6728419724342BF200790CEE /* SystemUtils.swift in Sources */,
 				6728417124342BF200790CEE /* RoundedView.swift in Sources */,
+				8E5207CD24A58FFA007A2667 /* UserManager.swift in Sources */,
 				672841AF24342BF200790CEE /* CustomView.swift in Sources */,
 				8E9BCFE624A452190073FBFB /* AlertNotiVC.swift in Sources */,
 				0EE817D2243A1D9E001F0521 /* PageViewVC.swift in Sources */,

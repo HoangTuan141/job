@@ -21,15 +21,103 @@ class SharedData {
         }
     }
     
-    // APNS token is saved in app
-    class var deviceToken: String? {
+    // User Information
+    class var id: Int? {
         get {
-            return (UserDefaults.standard.value(forKey: "NotificationToken") as? String)
+            return (UserDefaults.standard.value(forKey: "Id") as? Int)
         }
         set(value) {
-            UserDefaults.standard.set(value, forKey: "NotificationToken")
+            UserDefaults.standard.set(value, forKey: "Id")
         }
     }
     
+    class var fullName: String? {
+        get {
+            return (UserDefaults.standard.value(forKey: "FullName") as? String)
+        }
+        set(value) {
+            UserDefaults.standard.set(value, forKey: "FullName")
+        }
+    }
     
+    class var birthday: String? {
+        get {
+            return (UserDefaults.standard.value(forKey: "Birthday") as? String)
+        }
+        set(value) {
+            UserDefaults.standard.set(value, forKey: "Birthday")
+        }
+    }
+    
+    class var phoneNumber: String? {
+        get {
+            return (UserDefaults.standard.value(forKey: "PhoneNumber") as? String)
+        }
+        set(value) {
+            UserDefaults.standard.set(value, forKey: "PhoneNumber")
+        }
+    }
+    
+    class var skype: String? {
+        get {
+            return (UserDefaults.standard.value(forKey: "Skype") as? String)
+        }
+        set(value) {
+            UserDefaults.standard.set(value, forKey: "Skype")
+        }
+    }
+    
+    class var email: String? {
+        get {
+            return (UserDefaults.standard.value(forKey: "Email") as? String)
+        }
+        set(value) {
+            UserDefaults.standard.set(value, forKey: "Email")
+        }
+    }
+    
+    class var martial: String? {
+        get {
+            return (UserDefaults.standard.value(forKey: "Martial") as? String)
+        }
+        set(value) {
+            UserDefaults.standard.set(value, forKey: "Martial")
+        }
+    }
+    
+    class var hobby: String? {
+        get {
+            return (UserDefaults.standard.value(forKey: "Hobby") as? String)
+        }
+        set(value) {
+            UserDefaults.standard.set(value, forKey: "Hobby")
+        }
+    }
+    
+    class var avatar: String? {
+        get {
+            return (UserDefaults.standard.value(forKey: "Avatar") as? String)
+        }
+        set(value) {
+            UserDefaults.standard.set(value, forKey: "Avatar")
+        }
+    }
+    
+    class var career: String? {
+        get {
+            return (UserDefaults.standard.value(forKey: "Career") as? String)
+        }
+        set(value) {
+            UserDefaults.standard.set(value, forKey: "Career")
+        }
+    }
+    
+    class var introduce: String? {
+        get {
+            return (UserDefaults.standard.value(forKey: "Introduce") as? String)
+        }
+        set(value) {
+            UserDefaults.standard.set(value, forKey: "Introduce")
+        }
+    }
 }

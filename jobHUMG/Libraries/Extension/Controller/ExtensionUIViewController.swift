@@ -113,5 +113,15 @@ extension UIViewController {
         }
         self.present(alert, animated: false, completion: nil)
     }
+    
+    func showMaritalPopup(status: Marital, completion: ((_ maritalStatus: Marital) -> Void)?) {
+        let popup = MaritalStatusPopup()
+        popup.status = status
+        popup.modalPresentationStyle = .overCurrentContext
+        popup.selected = { maritalStatus in
+            completion?(maritalStatus)
+        }
+        self.present(popup, animated: false, completion: nil)
+    }
 }
 

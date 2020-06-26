@@ -36,8 +36,13 @@ class ReviewTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setupCell() {
-    
+    func fillData(data: CommentReview) {
+        nameLabel.text = data.reviewName
+        ratingView.rating = Double(data.star)
+        timeLabel.text = data.createdAt.dateFromTimestamp.toString(formatter: .dayMonthYear)
+        contentLabel.text = data.reviewContent
+        likeLabel.text = "\(data.likeCount)"
+        dislikeLabel.text = "\(data.disLikeCount)"
     }
     
     @IBAction func likePressed(_ sender: Any) {

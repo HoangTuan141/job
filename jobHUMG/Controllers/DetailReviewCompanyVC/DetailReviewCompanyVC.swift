@@ -14,10 +14,16 @@ class DetailReviewCompanyVC: UIViewController {
     @IBOutlet weak var navigationView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Variable
+    var id = 0
+    private var listReview = [CommentReview]()
+    private var detailCompany: DataDetailReviewCompany?
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupTableView()
+        getDetailReviewCompany()
     }
     
     // MARK: - Method
@@ -34,6 +40,17 @@ class DetailReviewCompanyVC: UIViewController {
         tableView.registerNibCellFor(type: ReviewTableViewCell.self)
     }
     
+    private func getDetailReviewCompany() {
+        DetailReviewCompanyAPI(id: self.id).excute(target: self, success: { [weak self] response in
+            guard let data = response?.data else { return }
+            self?.detailCompany = data
+            self?.listReview = data.ratingList
+            self?.tableView.reloadData()
+        }, error: { [weak self] error in
+            self?.showAlert(title: "Lỗi", subTitle: "Đã có lỗi xảy ra. Vui lòng refresh lại để xem review công ty.", titleButton: "OK", completion: nil)
+        })
+    }
+    
     // MARK: - Action
     @IBAction func backPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -42,6 +59,7 @@ class DetailReviewCompanyVC: UIViewController {
     @IBAction func createReviewPressed(_ sender: Any) {
         let createVC = CreateReviewCompanyVC()
         createVC.hidesBottomBarWhenPushed = true
+        createVC.id = self.detailCompany?.id ?? 0
         self.navigationController?.pushViewController(createVC, animated: true)
     }
 }
@@ -57,7 +75,7 @@ extension DetailReviewCompanyVC: UITableViewDelegate, UITableViewDataSource {
         case 0:
             return 1
         default:
-            return 1
+            return listReview.count
         }
     }
     
@@ -66,12 +84,15 @@ extension DetailReviewCompanyVC: UITableViewDelegate, UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCompanyCell", for: indexPath) as! ReviewCompanyCell
             cell.selectionStyle = .none
-//            cell.fillDataTest(avatar: reviewAvatar[indexPath.row], name: reviewName[indexPath.row], rate: Double(reviewStar[indexPath.row]))
+            if let data = self.detailCompany {
+                cell.fillData(data: data)
+            }
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewTableViewCell", for: indexPath) as! ReviewTableViewCell
             cell.delegate = self
             cell.selectionStyle = .none
+            cell.fillData(data: listReview[indexPath.row])
             return cell
         }
     }

@@ -12,13 +12,24 @@ import Alamofire
 class ProfileVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    var userInfo: DataUserInformation?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getUserInformation()
     }
     
     private func setupTableView() {
+        if let info = UserManager.shared.userInfo {
+            self.userInfo = info
+        }
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
@@ -28,38 +39,28 @@ class ProfileVC: UIViewController {
     }
     
     private func getUserInformation() {
-        GetUserInformationAPI().excute(target: self, success: { response in
-            print(response)
+        GetUserInformationAPI().excute(target: self, success: { [weak self] response in
+            guard let data = response?.data else { return }
+            UserManager.shared.saveUserInfo(data: data)
+            self?.userInfo = UserManager.shared.userInfo
+            self?.tableView.reloadData()
         }, error: { error in
-            print(error)
         })
     }
 }
 extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 1
-        default:
-            return 1
-        }
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
-            cell.selectionStyle = .none
-            cell.delegate = self
-            return cell
-        default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "RecruitmentCell", for: indexPath) as! RecruitmentCell
-            return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
+        cell.selectionStyle = .none
+        cell.delegate = self
+        if let info = self.userInfo {
+            cell.fillData(userInfo: info)
         }
-        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -76,12 +77,11 @@ extension ProfileVC: ProfileTableViewCellDelegate {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         appDelegate?.window?.rootViewController = navigationController
         appDelegate?.window?.makeKeyAndVisible()
-        
-        
     }
     
     func onClickEditProfile() {
         let editProfileVC = EditProfileVC()
+        editProfileVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(editProfileVC, animated: true)
     }
     

@@ -42,7 +42,17 @@ class ProfileTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setupCell() {
+    func fillData(userInfo: DataUserInformation) {
+        nameLabel.text = userInfo.fullName
+        careerLabel.text = userInfo.career
+        introduceLabel.text = userInfo.introduce
+        fullNameLabel.text = userInfo.fullName
+        birthdayLabel.text = userInfo.birthday
+        phoneNumberLabel.text = userInfo.phoneNumber
+        skypeLabel.text = userInfo.skype
+        emailLabel.text = userInfo.email
+        maritalStatusLabel.text = userInfo.marital
+        hobbyLabel.text = userInfo.hobby
     }
     
     @IBAction func logoutPressed(_ sender: Any) {

@@ -76,6 +76,7 @@ extension ReviewCompanyVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailVC = DetailReviewCompanyVC()
         detailVC.hidesBottomBarWhenPushed = true
+        detailVC.id = listCompany[indexPath.row].id ?? 0
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
     

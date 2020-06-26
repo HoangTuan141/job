@@ -26,7 +26,12 @@ class PlaceholderTextView: CustomNibView {
         }
     }
      
-    lazy var text: String? = textView.text
+    var text: String? {
+        didSet {
+            textView.text = self.text
+            placeholderLabel.isHidden = true
+        }
+    }
     
     var textColor: UIColor? {
         didSet {
