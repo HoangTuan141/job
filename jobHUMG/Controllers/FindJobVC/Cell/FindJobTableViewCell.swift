@@ -21,18 +21,11 @@ class FindJobTableViewCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var separator: UIView!
-    @IBOutlet weak var moreButton: UIButton!
     
     // MARK: - Property
     var isHiddenSeparator: Bool? {
         didSet {
             separator.isHidden = self.isHiddenSeparator ?? true ? true : false
-        }
-    }
-    
-    var isHiddentMoreButton: Bool? {
-        didSet {
-            moreButton.isHidden = self.isHiddentMoreButton ?? true ? true : false
         }
     }
     
@@ -69,7 +62,7 @@ class FindJobTableViewCell: UITableViewCell {
 
 extension FindJobTableViewCell {
     func fillData(data: DataListPostFindJob) {
-        avatarImage.image = UIImage(named: data.userAvatar)
+//        avatarImage.image = UIImage(named: data.userAvatar)
         nameLabel.text = data.userName
         timeLabel.text = data.createdAt.dateFromTimestamp.toString(formatter: .dayMonthYear)
         careerLabel.text = data.career
@@ -81,7 +74,7 @@ extension FindJobTableViewCell {
     }
     
     func fillData(data: DataDetailPostFindJob) {
-        avatarImage.image = UIImage(named: data.userAvatar)
+//        avatarImage.image = UIImage(named: data.userAvatar)
         nameLabel.text = data.userName
         timeLabel.text = data.createdAt.dateFromTimestamp.toString(formatter: .dayMonthYear)
         careerLabel.text = data.career

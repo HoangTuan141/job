@@ -144,7 +144,6 @@ extension DetailPostJobVC: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "RecruitmentCell", for: indexPath) as! RecruitmentCell
             cell.isHiddenSeparator = true
             cell.selectionStyle = .none
-            cell.isHiddentMoreButton = true
             
             if let data = self.detailPost {
                 cell.fillDataDetail(data: data)

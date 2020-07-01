@@ -156,7 +156,6 @@ extension DetailPostFindJobVC: UITableViewDelegate, UITableViewDataSource {
                 strongSelf.likePost(id: detailPost.id)
             }
             
-            cell.isHiddentMoreButton = true
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentTableViewCell", for: indexPath) as! CommentTableViewCell

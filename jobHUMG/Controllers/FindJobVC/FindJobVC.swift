@@ -69,7 +69,6 @@ extension FindJobVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FindJobTableViewCell", for: indexPath) as! FindJobTableViewCell
         cell.selectionStyle = .none
-        cell.isHiddentMoreButton = true
         cell.fillData(data: listPostFindJob[indexPath.row])
         
         cell.tapCommentButton = { [weak self] in

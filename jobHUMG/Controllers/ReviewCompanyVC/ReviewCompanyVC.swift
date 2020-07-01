@@ -56,6 +56,13 @@ class ReviewCompanyVC: UIViewController {
     @IBAction func suggestCompanyPressed(_ sender: Any) {
         let suggestPopup = SuggestCompanyPopupVC()
         suggestPopup.modalPresentationStyle = .overCurrentContext
+        suggestPopup.suggestCompanySuccess = {
+            self.getListCompany()
+        }
+        
+        suggestPopup.suggestCompanyFailed = {
+            self.showAlert(title: "Không tạo được gợi ý công ty", subTitle: "Đã có lỗi xảy ra. Vui lòng thử lại", titleButton: "OK", completion: nil)
+        }
         self.present(suggestPopup, animated: false, completion: nil)
     }
     

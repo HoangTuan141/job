@@ -80,6 +80,9 @@
 		0EE817D8243A23D4001F0521 /* RecruitmentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE817D6243A23D4001F0521 /* RecruitmentVC.xib */; };
 		0EE817DC243A2409001F0521 /* FindJobVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE817DA243A2409001F0521 /* FindJobVC.swift */; };
 		0EE817DD243A2409001F0521 /* FindJobVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE817DB243A2409001F0521 /* FindJobVC.xib */; };
+		0EFCAA0824ACCBD00073ED50 /* SuggestCompanyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFCAA0724ACCBD00073ED50 /* SuggestCompanyAPI.swift */; };
+		0EFCAA0B24ACD2A20073ED50 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFCAA0924ACD2A20073ED50 /* UserInfoVC.swift */; };
+		0EFCAA0C24ACD2A20073ED50 /* UserInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EFCAA0A24ACD2A20073ED50 /* UserInfoVC.xib */; };
 		6728415624342BF200790CEE /* APIBaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672840BB24342BF100790CEE /* APIBaseRequest.swift */; };
 		6728416324342BF200790CEE /* KeyboardHandlerScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672840D224342BF100790CEE /* KeyboardHandlerScrollView.swift */; };
 		6728416424342BF200790CEE /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672840D424342BF100790CEE /* BaseTableView.swift */; };
@@ -229,6 +232,9 @@
 		0EE817D6243A23D4001F0521 /* RecruitmentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecruitmentVC.xib; sourceTree = "<group>"; };
 		0EE817DA243A2409001F0521 /* FindJobVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindJobVC.swift; sourceTree = "<group>"; };
 		0EE817DB243A2409001F0521 /* FindJobVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindJobVC.xib; sourceTree = "<group>"; };
+		0EFCAA0724ACCBD00073ED50 /* SuggestCompanyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestCompanyAPI.swift; sourceTree = "<group>"; };
+		0EFCAA0924ACD2A20073ED50 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
+		0EFCAA0A24ACD2A20073ED50 /* UserInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoVC.xib; sourceTree = "<group>"; };
 		5351E73A1FF77C005FDE64F4 /* Pods-jobHUMG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jobHUMG.release.xcconfig"; path = "Target Support Files/Pods-jobHUMG/Pods-jobHUMG.release.xcconfig"; sourceTree = "<group>"; };
 		672840BB24342BF100790CEE /* APIBaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIBaseRequest.swift; sourceTree = "<group>"; };
 		672840D224342BF100790CEE /* KeyboardHandlerScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandlerScrollView.swift; sourceTree = "<group>"; };
@@ -578,6 +584,7 @@
 				8E5207D424A5FA35007A2667 /* CreateReivewAPI.swift */,
 				0E5CAFC224A64A220009DE31 /* LikeReviewAPI.swift */,
 				0E5CAFC424A650E10009DE31 /* DislikeReviewAPI.swift */,
+				0EFCAA0724ACCBD00073ED50 /* SuggestCompanyAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -627,6 +634,22 @@
 				0EE817DB243A2409001F0521 /* FindJobVC.xib */,
 			);
 			path = FindJobVC;
+			sourceTree = "<group>";
+		};
+		0EFCAA0D24ACD2BF0073ED50 /* UserInfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				0EFCAA0924ACD2A20073ED50 /* UserInfoVC.swift */,
+				0EFCAA0A24ACD2A20073ED50 /* UserInfoVC.xib */,
+			);
+			path = UserInfoVC;
+			sourceTree = "<group>";
+		};
+		0EFCAA0E24ACE78C0073ED50 /* SearchPostVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SearchPostVC;
 			sourceTree = "<group>";
 		};
 		672840B324342BF100790CEE /* Networking */ = {
@@ -883,6 +906,8 @@
 		6728413624342BF100790CEE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0EFCAA0E24ACE78C0073ED50 /* SearchPostVC */,
+				0EFCAA0D24ACD2BF0073ED50 /* UserInfoVC */,
 				0E68CE1224476ACB00BAAAA8 /* SearchCompanyVC */,
 				0E68CE03244754BB00BAAAA8 /* DetailReviewCompanyVC */,
 				0E5398402444C00C00EC10C3 /* CreateReviewCompanyVC */,
@@ -1127,6 +1152,7 @@
 				0E1DAE9E24373AC80033F1DD /* ProfileVC.xib in Resources */,
 				0E53983F2444B1B700EC10C3 /* ReviewCompanyCell.xib in Resources */,
 				0EE817D3243A1D9E001F0521 /* PageViewVC.xib in Resources */,
+				0EFCAA0C24ACD2A20073ED50 /* UserInfoVC.xib in Resources */,
 				67336B66241F0BBB00507258 /* LaunchScreen.storyboard in Resources */,
 				0E6A78FB243ED00F001A786B /* CommentTableViewCell.xib in Resources */,
 				0E93C300243DC521003DE6B8 /* FindJobTableViewCell.xib in Resources */,
@@ -1273,6 +1299,7 @@
 				6728417D24342BF200790CEE /* UIButton+Extension.swift in Sources */,
 				0E68CE06244754DB00BAAAA8 /* DetailReviewCompanyVC.swift in Sources */,
 				0E1DAE7C24371C720033F1DD /* APIService.swift in Sources */,
+				0EFCAA0824ACCBD00073ED50 /* SuggestCompanyAPI.swift in Sources */,
 				672841B624342BF200790CEE /* Font.swift in Sources */,
 				8E9BCFF024A48F240073FBFB /* SearchCompanyAPI.swift in Sources */,
 				6728419324342BF200790CEE /* FileManagerUtils.swift in Sources */,
@@ -1301,6 +1328,7 @@
 				6728417324342BF200790CEE /* GradientView.swift in Sources */,
 				0EBF21AB24A0FFD800C96C07 /* ListPostFindJobAPI.swift in Sources */,
 				6728418324342BF200790CEE /* UITableViewHeaderFooterView+Extension.swift in Sources */,
+				0EFCAA0B24ACD2A20073ED50 /* UserInfoVC.swift in Sources */,
 				6728416924342BF200790CEE /* BorderTextField.swift in Sources */,
 				6728416D24342BF200790CEE /* GradientButton.swift in Sources */,
 				6728419724342BF200790CEE /* SystemUtils.swift in Sources */,

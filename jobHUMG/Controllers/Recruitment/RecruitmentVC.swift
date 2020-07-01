@@ -69,7 +69,6 @@ extension RecruitmentVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecruitmentCell", for: indexPath) as! RecruitmentCell
         cell.selectionStyle = .none
-        cell.isHiddentMoreButton = true
         cell.fillData(data: listPost[indexPath.row])
         
         cell.tapCommentButton = { [weak self] in

@@ -9,6 +9,7 @@
 import UIKit
 
 class RecruitmentCell: UITableViewCell {
+    
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -21,17 +22,10 @@ class RecruitmentCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var separator: UIView!
-    @IBOutlet weak var moreButton: UIButton!
     
     var isHiddenSeparator: Bool? {
         didSet {
             separator.isHidden = self.isHiddenSeparator ?? true ? true : false
-        }
-    }
-    
-    var isHiddentMoreButton: Bool? {
-        didSet {
-            moreButton.isHidden = self.isHiddentMoreButton ?? true ? true : false
         }
     }
     
@@ -70,7 +64,7 @@ class RecruitmentCell: UITableViewCell {
 
 extension RecruitmentCell {
     func fillData(data: DataListRecruitmentPost) {
-        avatarImage.image = UIImage(named: data.userAvatar)
+//        avatarImage.image = UIImage(named: data.userAvatar)
         nameLabel.text = data.userName
         timeLabel.text = data.createdAt.dateFromTimestamp.toString(formatter: .dayMonthYear)
         careerLabel.text = data.career
@@ -84,7 +78,7 @@ extension RecruitmentCell {
     }
     
     func fillDataDetail(data: DataDetailRecruitmentPost) {
-        avatarImage.image = UIImage(named: data.userAvatar)
+//        avatarImage.image = UIImage(named: data.userAvatar)
         nameLabel.text = data.userName
         timeLabel.text = data.createdAt.dateFromTimestamp.toString(formatter: .dayMonthYear)
         careerLabel.text = data.career
