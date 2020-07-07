@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,7 +36,6 @@
                                 <constraint firstAttribute="height" constant="44" id="X1B-Ca-NDv"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <state key="normal" image="magnifyingglass" catalog="system"/>
                             <connections>
                                 <action selector="searchPressed:" destination="-1" eventType="touchUpInside" id="wFb-f4-1rl"/>
                             </connections>
@@ -54,9 +54,18 @@
                                 <action selector="suggestCompanyPressed:" destination="-1" eventType="touchUpInside" id="zQf-L3-49V"/>
                             </connections>
                         </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_search" translatesAutoresizingMaskIntoConstraints="NO" id="DSv-mZ-fda">
+                            <rect key="frame" x="384" y="59" width="16" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16" id="V1m-Zb-6Sn"/>
+                                <constraint firstAttribute="width" constant="16" id="wDB-a1-BkS"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.25882352939999997" green="0.63529411759999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="DSv-mZ-fda" firstAttribute="centerX" secondItem="mwr-4n-lA2" secondAttribute="centerX" id="6RA-d3-dSC"/>
+                        <constraint firstItem="DSv-mZ-fda" firstAttribute="centerY" secondItem="mwr-4n-lA2" secondAttribute="centerY" id="9E8-WS-YXz"/>
                         <constraint firstItem="BiU-ED-BrC" firstAttribute="leading" secondItem="xkD-Hn-IOT" secondAttribute="leading" constant="24" id="PZb-W4-YJY"/>
                         <constraint firstAttribute="bottom" secondItem="BiU-ED-BrC" secondAttribute="bottom" constant="10" id="YCM-0S-Oww"/>
                         <constraint firstAttribute="trailing" secondItem="mwr-4n-lA2" secondAttribute="trailing" id="b0i-ye-I7g"/>
@@ -86,6 +95,6 @@
         </view>
     </objects>
     <resources>
-        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="ic_search" width="225" height="225"/>
     </resources>
 </document>

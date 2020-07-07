@@ -158,11 +158,24 @@ extension DetailPostJobVC: UITableViewDelegate, UITableViewDataSource {
                 strongSelf.likePost(id: detailPost.id)
             }
             
+            cell.tapGoToUserInfo = {
+                let vc = UserInfoVC()
+                vc.userId = self.detailPost?.userId ?? 0
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentTableViewCell", for: indexPath) as! CommentTableViewCell
             cell.selectionStyle = .none
             cell.fillData(data: listComment[indexPath.row])
+            
+            cell.tapGoToUserInfo = { [weak self] in
+                let vc = UserInfoVC()
+                vc.userId = self?.listComment[indexPath.row].userId ?? 0
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+            
             return cell
         }
     }

@@ -23,6 +23,7 @@ class PageViewVC: UIViewController {
     var rightTitle: String?
     var listVC = [UIViewController]()
     fileprivate var pageViewController: UIPageViewController!
+    var tab = 0
     
     //MARK: - Life cycle
     override func viewDidLoad() {
@@ -60,11 +61,15 @@ class PageViewVC: UIViewController {
     @IBAction func leftPressed(_ sender: Any) {
         pageViewController.setViewControllers([listVC[0]], direction: .reverse, animated: true, completion: nil)
         setTab(constraint: 0, colorLeftButton: .greenMainColor, colorRightButton: .grayColor)
+        tab = 0
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "indexOfTabPageView"), object: tab)
     }
     
     @IBAction func rightPressed(_ sender: Any) {
         pageViewController.setViewControllers([listVC[1]], direction: .forward, animated: true, completion: nil)
         setTab(constraint: self.view.frame.width / 2, colorLeftButton: .grayColor, colorRightButton: .greenMainColor)
+        tab = 1
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "indexOfTabPageView"), object: tab)
     }
 }
 
@@ -84,8 +89,12 @@ extension PageViewVC: UIPageViewControllerDelegate {
         if completed, let index = pageViewController.viewControllers?.first?.view.tag {
             if index == 0 {
                 setTab(constraint: 0, colorLeftButton: .greenMainColor, colorRightButton: .grayColor)
+                tab = 0
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "indexOfTabPageView"), object: tab)
             } else {
                 setTab(constraint: self.view.frame.width / 2, colorLeftButton: .grayColor, colorRightButton: .greenMainColor)
+                tab = 1
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "indexOfTabPageView"), object: tab)
             }
         }
     }

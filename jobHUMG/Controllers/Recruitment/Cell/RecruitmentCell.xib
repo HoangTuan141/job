@@ -194,9 +194,16 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvc-Pl-j2S">
+                        <rect key="frame" x="79" y="0.0" width="315" height="60.5"/>
+                        <connections>
+                            <action selector="userInfoPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5qc-rz-0HI"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="qGe-5y-YO7" secondAttribute="trailing" constant="24" id="1EV-Fs-QFv"/>
+                    <constraint firstItem="Gvc-Pl-j2S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="1hW-Nd-Jbq"/>
                     <constraint firstItem="sH7-zB-cD2" firstAttribute="leading" secondItem="XrQ-y9-8Lc" secondAttribute="trailing" constant="5" id="4k0-z2-fDy"/>
                     <constraint firstItem="hmW-vy-08c" firstAttribute="top" secondItem="Smc-av-ub5" secondAttribute="bottom" constant="12" id="6aO-Xx-XKi"/>
                     <constraint firstItem="8Bf-rz-PE3" firstAttribute="top" secondItem="qGe-5y-YO7" secondAttribute="bottom" constant="12" id="8Hw-qu-b1V"/>
@@ -215,6 +222,7 @@
                     <constraint firstAttribute="trailing" secondItem="cw3-QF-0Df" secondAttribute="trailing" id="P06-Qb-2bK"/>
                     <constraint firstAttribute="trailing" secondItem="1ph-qh-dtJ" secondAttribute="trailing" constant="16" id="Qy7-Ah-HxY"/>
                     <constraint firstItem="Smc-av-ub5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="Ry9-BN-Ll8"/>
+                    <constraint firstItem="Gvc-Pl-j2S" firstAttribute="leading" secondItem="fpi-ou-2qz" secondAttribute="leading" id="Tjg-Hr-9iX"/>
                     <constraint firstAttribute="bottom" secondItem="cw3-QF-0Df" secondAttribute="bottom" id="VZJ-rz-XFo"/>
                     <constraint firstItem="s2h-xR-AMY" firstAttribute="top" secondItem="sH7-zB-cD2" secondAttribute="bottom" constant="12" id="XAW-Au-1WN"/>
                     <constraint firstItem="fpi-ou-2qz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="Z8f-Wh-u8z"/>
@@ -227,7 +235,9 @@
                     <constraint firstAttribute="trailing" secondItem="fpi-ou-2qz" secondAttribute="trailing" constant="24" id="d8M-TD-wKx"/>
                     <constraint firstAttribute="trailing" secondItem="kli-qs-mYd" secondAttribute="trailing" constant="24" id="gUj-3s-LKR"/>
                     <constraint firstItem="UUk-2c-tkw" firstAttribute="top" secondItem="kli-qs-mYd" secondAttribute="bottom" id="gwa-6L-gcg"/>
+                    <constraint firstItem="Gvc-Pl-j2S" firstAttribute="bottom" secondItem="1ph-qh-dtJ" secondAttribute="bottom" id="hf4-W1-vmG"/>
                     <constraint firstItem="8Bf-rz-PE3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="kv2-hb-FKM"/>
+                    <constraint firstItem="Gvc-Pl-j2S" firstAttribute="trailing" secondItem="fpi-ou-2qz" secondAttribute="trailing" id="omr-A6-kmf"/>
                     <constraint firstItem="1ph-qh-dtJ" firstAttribute="leading" secondItem="Smc-av-ub5" secondAttribute="trailing" constant="13" id="vZq-L0-KLY"/>
                     <constraint firstAttribute="trailing" secondItem="sH7-zB-cD2" secondAttribute="trailing" constant="24" id="vc4-FS-h7M"/>
                     <constraint firstItem="XrQ-y9-8Lc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="zST-9B-DnO"/>

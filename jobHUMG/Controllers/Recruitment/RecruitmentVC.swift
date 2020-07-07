@@ -52,7 +52,7 @@ class RecruitmentVC: UIViewController {
     private func likePost(id: Int) {
         LikePostAPI(id: id).excute(target: self, success: { [weak self] response in
             self?.getListRecruitmentPost()
-        }, error: { [weak self] error in
+        }, error: { error in
         })
     }
     
@@ -70,6 +70,12 @@ extension RecruitmentVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecruitmentCell", for: indexPath) as! RecruitmentCell
         cell.selectionStyle = .none
         cell.fillData(data: listPost[indexPath.row])
+        
+        cell.tapGoToUserInfo = {
+            let userInfoVC = UserInfoVC()
+            userInfoVC.userId = self.listPost[indexPath.row].userId
+            self.navigationController?.pushViewController(userInfoVC, animated: true)
+        }
         
         cell.tapCommentButton = { [weak self] in
             let vc = DetailPostJobVC()

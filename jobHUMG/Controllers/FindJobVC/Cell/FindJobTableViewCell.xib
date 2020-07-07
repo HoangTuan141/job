@@ -182,6 +182,12 @@
                             <constraint firstAttribute="height" constant="4" id="A9M-ZP-rhX"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhN-Lf-Z3D">
+                        <rect key="frame" x="79" y="0.0" width="127.5" height="60.5"/>
+                        <connections>
+                            <action selector="goToUserInfoPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eMT-sd-q4A"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="vvd-Hm-xkY" secondAttribute="trailing" constant="24" id="16i-Wh-9ng"/>
@@ -189,6 +195,7 @@
                     <constraint firstItem="vvd-Hm-xkY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="1s0-pS-gf1"/>
                     <constraint firstItem="sb9-Gx-M6l" firstAttribute="top" secondItem="shi-VZ-FPp" secondAttribute="bottom" constant="12" id="24x-Mu-eE2"/>
                     <constraint firstItem="Wn2-ry-DNd" firstAttribute="top" secondItem="KCs-Sc-zZp" secondAttribute="bottom" id="4xh-X4-vnj"/>
+                    <constraint firstItem="OhN-Lf-Z3D" firstAttribute="trailing" secondItem="dcN-FX-4dT" secondAttribute="trailing" id="6Rc-3P-5mi"/>
                     <constraint firstAttribute="trailing" secondItem="shi-VZ-FPp" secondAttribute="trailing" constant="16" id="8Vp-yT-1VA"/>
                     <constraint firstAttribute="trailing" secondItem="KCs-Sc-zZp" secondAttribute="trailing" constant="24" id="H62-jv-427"/>
                     <constraint firstItem="KCs-Sc-zZp" firstAttribute="top" secondItem="sb9-Gx-M6l" secondAttribute="bottom" constant="13" id="Ivs-4r-WQC"/>
@@ -204,11 +211,14 @@
                     <constraint firstAttribute="trailing" secondItem="sb9-Gx-M6l" secondAttribute="trailing" constant="16" id="ftJ-0u-UeS"/>
                     <constraint firstAttribute="bottom" secondItem="0YV-5U-3sr" secondAttribute="bottom" id="gTj-Oz-xyI"/>
                     <constraint firstAttribute="trailing" secondItem="0YV-5U-3sr" secondAttribute="trailing" id="hzL-ID-FGJ"/>
+                    <constraint firstItem="OhN-Lf-Z3D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="i1l-2F-wSE"/>
                     <constraint firstItem="shi-VZ-FPp" firstAttribute="leading" secondItem="6Ms-D6-F1h" secondAttribute="trailing" constant="5" id="jrD-lG-P5P"/>
                     <constraint firstItem="dcN-FX-4dT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="kPb-n9-iEX"/>
                     <constraint firstItem="aZL-fR-7db" firstAttribute="leading" secondItem="UBt-nu-eR1" secondAttribute="trailing" constant="13" id="kdN-aV-inQ"/>
                     <constraint firstItem="dcN-FX-4dT" firstAttribute="leading" secondItem="UBt-nu-eR1" secondAttribute="trailing" constant="13" id="kz0-Qm-u52"/>
                     <constraint firstItem="UBt-nu-eR1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="mkY-Uc-zgg"/>
+                    <constraint firstItem="OhN-Lf-Z3D" firstAttribute="bottom" secondItem="aZL-fR-7db" secondAttribute="bottom" id="szS-3s-luT"/>
+                    <constraint firstItem="OhN-Lf-Z3D" firstAttribute="leading" secondItem="dcN-FX-4dT" secondAttribute="leading" id="uub-Bb-dFg"/>
                     <constraint firstItem="0YV-5U-3sr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vNB-eg-HuF"/>
                     <constraint firstItem="KCs-Sc-zZp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="vop-nz-ntb"/>
                     <constraint firstItem="sb9-Gx-M6l" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="xG4-xM-3C4"/>

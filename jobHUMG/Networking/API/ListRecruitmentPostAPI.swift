@@ -36,6 +36,7 @@ struct DataListRecruitmentPost: Response {
     var userAvatar: String
     var createdAt: Int
     var isLike: Bool
+    var userId: Int
     
     init(json: JSON) {
         self.id = json["id"].intValue
@@ -52,6 +53,7 @@ struct DataListRecruitmentPost: Response {
         self.userAvatar = json["user_avatar"].stringValue
         self.createdAt = json["created_at"].intValue
         self.isLike = json["is_liked"].boolValue
+        self.userId = json["user_id"].intValue
     }
 }
 
@@ -59,6 +61,16 @@ class ListRecruitmentPostAPI: APIService<ResponseListRecruitmentPost> {
     init() {
         super.init(request: APIRequest(name: "Get list post",
                                        path: "api/post/employer",
+                                       method: .get,
+                                       header: APIRequest.bearerHeader,
+                                       parameters: nil))
+    }
+}
+
+class SearchRecruitmentPostAPI: APIService<ResponseListRecruitmentPost> {
+    init(name: String?, location: String?, wage: String?, career: String?, description: String?) {
+        super.init(request: APIRequest(name: "Search Recruitment Post",
+                                       path: "api/post/employer/search/params?company_name=\(name ?? "")&location=\(location ?? "")&wage=\(wage ?? "")&career=\(career ?? "")&description=\(description ?? "")",
                                        method: .get,
                                        header: APIRequest.bearerHeader,
                                        parameters: nil))

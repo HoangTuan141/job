@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,11 +51,19 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HO-SG-AUU">
+                        <rect key="frame" x="67" y="0.0" width="307" height="36"/>
+                        <connections>
+                            <action selector="goToUserInfoPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tvz-vd-TWZ"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="vAc-OG-X2E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="0Ec-3U-4z6"/>
                     <constraint firstItem="nwP-PE-tpN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="0wT-61-DRm"/>
+                    <constraint firstItem="3HO-SG-AUU" firstAttribute="leading" secondItem="nwP-PE-tpN" secondAttribute="leading" id="7Kk-Om-udM"/>
                     <constraint firstItem="vyL-bS-6MA" firstAttribute="top" secondItem="nwP-PE-tpN" secondAttribute="bottom" constant="15" id="BfE-E5-t5w"/>
+                    <constraint firstItem="3HO-SG-AUU" firstAttribute="bottom" secondItem="nwP-PE-tpN" secondAttribute="bottom" id="Haa-RZ-fEA"/>
                     <constraint firstItem="vAc-OG-X2E" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="NzL-Ig-W71"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vyL-bS-6MA" secondAttribute="trailing" constant="26" id="PJk-pa-y1K"/>
                     <constraint firstItem="nwP-PE-tpN" firstAttribute="leading" secondItem="kfK-JZ-deB" secondAttribute="leading" id="PZy-J0-HiW"/>
@@ -64,6 +73,8 @@
                     <constraint firstAttribute="bottom" secondItem="vyL-bS-6MA" secondAttribute="bottom" constant="20" id="f7f-6t-Dcm"/>
                     <constraint firstItem="kfK-JZ-deB" firstAttribute="leading" secondItem="vyL-bS-6MA" secondAttribute="leading" constant="-10" id="lsA-ug-xz0"/>
                     <constraint firstItem="kfK-JZ-deB" firstAttribute="trailing" secondItem="vyL-bS-6MA" secondAttribute="trailing" constant="10" id="p2K-t2-B4B"/>
+                    <constraint firstItem="3HO-SG-AUU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pFL-AG-oE5"/>
+                    <constraint firstItem="3HO-SG-AUU" firstAttribute="trailing" secondItem="nwP-PE-tpN" secondAttribute="trailing" id="t7B-Vg-AOV"/>
                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="nwP-PE-tpN" secondAttribute="trailing" constant="26" id="uIX-wP-XnM"/>
                 </constraints>
             </tableViewCellContentView>

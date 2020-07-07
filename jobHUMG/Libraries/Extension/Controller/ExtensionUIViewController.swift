@@ -123,5 +123,15 @@ extension UIViewController {
         }
         self.present(popup, animated: false, completion: nil)
     }
+    
+    func showListCareerPopup(career: String, completion: ((_ career: String) -> Void)? ) {
+        let popup = CareerPopup()
+        popup.career = career
+        popup.modalPresentationStyle = .overCurrentContext
+        popup.tapOnCareer = { career in
+            completion?(career)
+        }
+        self.present(popup, animated: false, completion: nil)
+    }
 }
 

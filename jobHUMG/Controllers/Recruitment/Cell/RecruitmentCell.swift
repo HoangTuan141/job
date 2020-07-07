@@ -29,13 +29,15 @@ class RecruitmentCell: UITableViewCell {
         }
     }
     
-    var tapMoreButton: (() -> Void)?
     var tapLikeButton: (() -> Void)?
     var tapCommentButton: (() -> Void)?
+    var tapGoToUserInfo: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goToUserInfo))
+        avatarImage.isUserInteractionEnabled = true
+        avatarImage.addGestureRecognizer(tapGesture)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -43,14 +45,17 @@ class RecruitmentCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    @IBAction func userInfoPressed(_ sender: Any) {
+        self.tapGoToUserInfo?()
+    }
+    
+    @objc func goToUserInfo() {
+        self.tapGoToUserInfo?()
+    }
     
     func setupLikeButton(isLike: Bool) {
         iconLikeImage.image = isLike ? #imageLiteral(resourceName: "ic_like_selected") : #imageLiteral(resourceName: "ic_like")
         likeLabel.textColor = isLike ? UIColor.greenMainColor : UIColor.grayColor
-    }
-    
-    @IBAction func morePressed(_ sender: Any) {
-        self.tapMoreButton?()
     }
     
     @IBAction func likePressed(_ sender: Any) {

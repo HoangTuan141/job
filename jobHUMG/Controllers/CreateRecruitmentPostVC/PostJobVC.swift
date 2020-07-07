@@ -101,6 +101,14 @@ class PostJobVC: UIViewController {
             self?.isSelectedEndTime = true
         })
     }
+    
+    @IBAction func careerPressed(_ sender: Any) {
+        self.dismissKeyboard()
+        self.showListCareerPopup(career: careerTextField.text!, completion: { [weak self] career in
+            self?.careerTextField.text = career
+        })
+    }
+    
 }
 
 extension PostJobVC: UITextFieldDelegate {

@@ -73,7 +73,7 @@ class PostFindJobVC: UIViewController {
         } else {
             startTime = startDateButton.titleLabel?.text?.toDate(formatter: .dayMonthYear)?.timeStamp ?? 0
             endTime = endDateButton.titleLabel?.text?.toDate(formatter: .dayMonthYear)?.timeStamp ?? 0
-            createPost(career: careerTextField.text!, location: regionTextView.text!, description: descriptionTextView.textView.text, startDate: startTime, endDate: endTime )
+            createPost(career: careerTextField.text!, location: regionTextView.textView.text!, description: descriptionTextView.textView.text, startDate: startTime, endDate: endTime )
         }
     }
     
@@ -96,6 +96,14 @@ class PostFindJobVC: UIViewController {
             self?.isSelectedEndTime = true
         })
     }
+    
+    @IBAction func careerbutton(_ sender: Any) {
+        self.dismissKeyboard()
+        self.showListCareerPopup(career: careerTextField.text!, completion: { [weak self] career in
+            self?.careerTextField.text = career
+        })
+    }
+    
 }
 
 extension PostFindJobVC: UITextFieldDelegate {

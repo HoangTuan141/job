@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -99,7 +99,7 @@
                                             <color key="textColor" red="0.25882352939999997" green="0.63529411759999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập ngành/ nghề" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="in5-1J-S7Z">
+                                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập ngành/ nghề" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="in5-1J-S7Z">
                                             <rect key="frame" x="23" y="22" width="368" height="33"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -111,10 +111,18 @@
                                                 <constraint firstAttribute="height" constant="1" id="tY2-C1-JVo"/>
                                             </constraints>
                                         </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjh-8a-4dN">
+                                            <rect key="frame" x="23" y="22" width="368" height="33"/>
+                                            <connections>
+                                                <action selector="careerPressed:" destination="-1" eventType="touchUpInside" id="xmz-OC-Jik"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstItem="Bv9-ny-AsO" firstAttribute="top" secondItem="6HD-lK-sD0" secondAttribute="top" id="0kc-QX-OYp"/>
+                                        <constraint firstItem="Cjh-8a-4dN" firstAttribute="leading" secondItem="in5-1J-S7Z" secondAttribute="leading" id="1db-8v-bLi"/>
+                                        <constraint firstItem="Cjh-8a-4dN" firstAttribute="bottom" secondItem="in5-1J-S7Z" secondAttribute="bottom" id="2s0-e5-Dtv"/>
                                         <constraint firstItem="COu-hO-aJn" firstAttribute="leading" secondItem="6HD-lK-sD0" secondAttribute="leading" constant="23" id="8vz-gc-eXi"/>
                                         <constraint firstItem="Bv9-ny-AsO" firstAttribute="leading" secondItem="6HD-lK-sD0" secondAttribute="leading" constant="23" id="Cjk-Xn-07Z"/>
                                         <constraint firstAttribute="trailing" secondItem="in5-1J-S7Z" secondAttribute="trailing" constant="23" id="D05-jr-nYZ"/>
@@ -123,6 +131,8 @@
                                         <constraint firstItem="in5-1J-S7Z" firstAttribute="leading" secondItem="6HD-lK-sD0" secondAttribute="leading" constant="23" id="GzB-32-rQF"/>
                                         <constraint firstItem="COu-hO-aJn" firstAttribute="top" secondItem="in5-1J-S7Z" secondAttribute="bottom" id="Jsa-4v-IPH"/>
                                         <constraint firstAttribute="height" constant="56" id="LWb-NS-0Kg"/>
+                                        <constraint firstItem="Cjh-8a-4dN" firstAttribute="trailing" secondItem="in5-1J-S7Z" secondAttribute="trailing" id="Xvs-9A-QGP"/>
+                                        <constraint firstItem="Cjh-8a-4dN" firstAttribute="top" secondItem="in5-1J-S7Z" secondAttribute="top" id="hN7-03-kOy"/>
                                         <constraint firstAttribute="trailing" secondItem="COu-hO-aJn" secondAttribute="trailing" constant="23" id="hgp-Vb-brY"/>
                                     </constraints>
                                 </view>

@@ -29,16 +29,23 @@ class FindJobTableViewCell: UITableViewCell {
         }
     }
     
-    var tapMoreButton: (() -> Void)?
+    var tapGoToUserInfo: (() -> Void)?
     var tapLikeButton: (() -> Void)?
     var tapCommentButton: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goToUserInfo))
+        avatarImage.isUserInteractionEnabled = true
+        avatarImage.addGestureRecognizer(tapGesture)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    @objc func goToUserInfo() {
+        self.tapGoToUserInfo?()
     }
     
     func setupLikeButton(isLike: Bool) {
@@ -55,8 +62,8 @@ class FindJobTableViewCell: UITableViewCell {
         self.tapCommentButton?()
     }
     
-    @IBAction func morePressed(_ sender: Any) {
-        self.tapMoreButton?()
+    @IBAction func goToUserInfoPressed(_ sender: Any) {
+        self.tapGoToUserInfo?()
     }
 }
 

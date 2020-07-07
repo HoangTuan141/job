@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchRecruitmentPostVC" customModule="jobHUMG" customModuleProvider="target">
+            <connections>
+                <outlet property="addressTextField" destination="OTC-3n-wiL" id="hzm-CM-D0f"/>
+                <outlet property="careerTextField" destination="AIh-co-b3p" id="RY5-D2-Zvd"/>
+                <outlet property="companyNameTextField" destination="stV-xy-tCC" id="0c9-WD-55b"/>
+                <outlet property="descriptionTextField" destination="SDe-la-iYV" id="tlO-2b-AQs"/>
+                <outlet property="navigationView" destination="Kbp-g3-see" id="fcp-wZ-Iqj"/>
+                <outlet property="salaryTextField" destination="Prv-wd-jHi" id="eEp-zb-9se"/>
+                <outlet property="tableView" destination="w6l-L7-VJp" id="8pW-S0-fof"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kbp-g3-see">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECv-yg-pzf">
+                            <rect key="frame" x="0.0" y="44" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="BCv-73-28L"/>
+                                <constraint firstAttribute="height" constant="44" id="bCH-Dr-MsK"/>
+                            </constraints>
+                            <state key="normal" image="ic_back_white"/>
+                            <connections>
+                                <action selector="backPressed:" destination="-1" eventType="touchUpInside" id="g7M-q9-VHD"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tìm kiếm bài viết tuyển dụng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Q3-mR-fMu">
+                            <rect key="frame" x="96" y="56.5" width="222" height="19.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzF-2R-bzW">
+                            <rect key="frame" x="0.0" y="88" width="414" height="2"/>
+                            <color key="backgroundColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.59607843140000005" alpha="0.30051369859999999" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="MjM-44-rgu"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.25882352939999997" green="0.63529411759999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="ECv-yg-pzf" firstAttribute="leading" secondItem="Kbp-g3-see" secondAttribute="leading" id="Mgb-II-P1H"/>
+                        <constraint firstItem="nzF-2R-bzW" firstAttribute="leading" secondItem="Kbp-g3-see" secondAttribute="leading" id="Nqh-qO-JNY"/>
+                        <constraint firstAttribute="trailing" secondItem="nzF-2R-bzW" secondAttribute="trailing" id="Wwd-zG-9de"/>
+                        <constraint firstItem="4Q3-mR-fMu" firstAttribute="centerY" secondItem="ECv-yg-pzf" secondAttribute="centerY" id="ZwO-br-vKH"/>
+                        <constraint firstItem="nzF-2R-bzW" firstAttribute="top" secondItem="ECv-yg-pzf" secondAttribute="bottom" id="pFO-WZ-eHP"/>
+                        <constraint firstAttribute="bottom" secondItem="nzF-2R-bzW" secondAttribute="bottom" id="sar-Pz-WxY"/>
+                        <constraint firstItem="4Q3-mR-fMu" firstAttribute="centerX" secondItem="Kbp-g3-see" secondAttribute="centerX" id="xz2-J5-8P3"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập ngành nghề" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AIh-co-b3p">
+                    <rect key="frame" x="23" y="107" width="368" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập địa chỉ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OTC-3n-wiL">
+                    <rect key="frame" x="23" y="224" width="368" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập mức lương" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Prv-wd-jHi">
+                    <rect key="frame" x="23" y="185" width="368" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập thông tin khác" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SDe-la-iYV">
+                    <rect key="frame" x="23" y="263" width="368" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7w-3Q-u5e">
+                    <rect key="frame" x="23" y="107" width="368" height="34"/>
+                    <connections>
+                        <action selector="selectCareerPressed:" destination="-1" eventType="touchUpInside" id="f1S-fu-aYN"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w6l-L7-VJp">
+                    <rect key="frame" x="0.0" y="302" width="414" height="560"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập tên công ty" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="stV-xy-tCC">
+                    <rect key="frame" x="23" y="146" width="368" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Prv-wd-jHi" firstAttribute="top" secondItem="stV-xy-tCC" secondAttribute="bottom" constant="5" id="4iU-hI-zcH"/>
+                <constraint firstItem="Prv-wd-jHi" firstAttribute="leading" secondItem="OTC-3n-wiL" secondAttribute="leading" id="82o-7I-K2f"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AIh-co-b3p" secondAttribute="trailing" constant="23" id="8s4-la-Pgc"/>
+                <constraint firstItem="Kbp-g3-see" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9VF-wj-uMw"/>
+                <constraint firstItem="OTC-3n-wiL" firstAttribute="leading" secondItem="AIh-co-b3p" secondAttribute="leading" id="9rN-qh-Kbh"/>
+                <constraint firstItem="SDe-la-iYV" firstAttribute="top" secondItem="OTC-3n-wiL" secondAttribute="bottom" constant="5" id="Bxf-T0-us3"/>
+                <constraint firstItem="w7w-3Q-u5e" firstAttribute="trailing" secondItem="AIh-co-b3p" secondAttribute="trailing" id="IEF-S0-7ML"/>
+                <constraint firstItem="w7w-3Q-u5e" firstAttribute="top" secondItem="AIh-co-b3p" secondAttribute="top" id="IeF-Ce-zuI"/>
+                <constraint firstItem="OTC-3n-wiL" firstAttribute="top" secondItem="Prv-wd-jHi" secondAttribute="bottom" constant="5" id="NX9-k4-wkI"/>
+                <constraint firstItem="w7w-3Q-u5e" firstAttribute="bottom" secondItem="AIh-co-b3p" secondAttribute="bottom" id="OWH-Jd-OqL"/>
+                <constraint firstItem="Kbp-g3-see" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="QEq-rP-guk"/>
+                <constraint firstItem="OTC-3n-wiL" firstAttribute="trailing" secondItem="AIh-co-b3p" secondAttribute="trailing" id="RDT-Tg-YIm"/>
+                <constraint firstItem="AIh-co-b3p" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="63" id="WdF-87-1TM"/>
+                <constraint firstItem="Prv-wd-jHi" firstAttribute="trailing" secondItem="OTC-3n-wiL" secondAttribute="trailing" id="Y8g-nn-8Y1"/>
+                <constraint firstItem="stV-xy-tCC" firstAttribute="leading" secondItem="Prv-wd-jHi" secondAttribute="leading" id="ada-kn-Zik"/>
+                <constraint firstItem="w6l-L7-VJp" firstAttribute="top" secondItem="Kbp-g3-see" secondAttribute="bottom" constant="212" id="b9l-wE-RYR"/>
+                <constraint firstItem="AIh-co-b3p" firstAttribute="top" secondItem="Kbp-g3-see" secondAttribute="bottom" constant="17" id="dyf-5f-WmX"/>
+                <constraint firstItem="SDe-la-iYV" firstAttribute="trailing" secondItem="stV-xy-tCC" secondAttribute="trailing" id="edK-Lj-oez"/>
+                <constraint firstItem="w6l-L7-VJp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="i11-gZ-dKq"/>
+                <constraint firstItem="SDe-la-iYV" firstAttribute="leading" secondItem="stV-xy-tCC" secondAttribute="leading" id="kxW-XA-T5H"/>
+                <constraint firstItem="AIh-co-b3p" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="23" id="oAI-cO-K0U"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="w6l-L7-VJp" secondAttribute="bottom" id="qJL-xi-uEJ"/>
+                <constraint firstItem="Kbp-g3-see" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="rLi-jF-oVb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="w6l-L7-VJp" secondAttribute="trailing" id="tSV-5d-MAI"/>
+                <constraint firstItem="stV-xy-tCC" firstAttribute="top" secondItem="AIh-co-b3p" secondAttribute="bottom" constant="5" id="tib-Gv-qmN"/>
+                <constraint firstItem="stV-xy-tCC" firstAttribute="trailing" secondItem="Prv-wd-jHi" secondAttribute="trailing" id="wiV-si-DRK"/>
+                <constraint firstItem="w7w-3Q-u5e" firstAttribute="leading" secondItem="AIh-co-b3p" secondAttribute="leading" id="zIc-el-Fr6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="92"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_back_white" width="12" height="22"/>
+    </resources>
+</document>

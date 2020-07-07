@@ -19,10 +19,11 @@ class APIService<T: Response> {
     func excute(target: UIViewController, success: @escaping (_ response: T?) -> Void, error: @escaping (_ error : String?) -> Void) {
         request?.printInfomationRequest()
         Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 120
-        Alamofire.request(request!.fullUrl,
+        Alamofire.request(request!.fullUrl.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!,
                             method: request!.method,
                             parameters: request?.parameters,
                             headers: request?.header).validate().responseJSON() { response in
+                                print(self.request!.fullUrl)
             if response.result.isSuccess {
                 let json = JSON(response.result.value!)
                 target.hideLoading()

@@ -33,6 +33,7 @@ struct DataDetailRecruitmentPost: Response {
     var createdAt: Int
     var comment = [CommentDetailRecruitmentPost]()
     var isLike: Bool
+    var userId: Int
     
     init(json: JSON) {
         self.id = json["id"].intValue
@@ -54,6 +55,7 @@ struct DataDetailRecruitmentPost: Response {
             }
         }
         self.isLike = json["is_liked"].boolValue
+        self.userId = json["user_id"].intValue
     }
 }
 
@@ -63,6 +65,7 @@ struct CommentDetailRecruitmentPost: Response {
     var userName: String
     var userAvatar: String
     var createdAt: Int
+    var userId: Int
     
     init(json: JSON) {
         self.id = json["id"].intValue
@@ -70,6 +73,7 @@ struct CommentDetailRecruitmentPost: Response {
         self.userName = json["user_name"].stringValue
         self.userAvatar = json["user_avatar"].stringValue
         self.createdAt = json["created_at"].intValue
+        self.userId = json["user_id"].intValue
     }
 }
 
