@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,11 +31,21 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review công ty" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3V-Gt-bwb">
+                        <rect key="frame" x="16" y="46" width="48" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Ozo-yK-glN" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Da7-cA-PLp"/>
+                    <constraint firstItem="W3V-Gt-bwb" firstAttribute="centerY" secondItem="Ozo-yK-glN" secondAttribute="centerY" id="RxS-xL-hcu"/>
+                    <constraint firstItem="W3V-Gt-bwb" firstAttribute="centerX" secondItem="Ozo-yK-glN" secondAttribute="centerX" id="VAl-NI-nbT"/>
                     <constraint firstItem="9bi-iR-Y9Q" firstAttribute="centerY" secondItem="Ozo-yK-glN" secondAttribute="centerY" id="YIh-PC-XN3"/>
                     <constraint firstItem="Ozo-yK-glN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bqJ-y7-FWM"/>
+                    <constraint firstItem="W3V-Gt-bwb" firstAttribute="trailing" secondItem="Ozo-yK-glN" secondAttribute="trailing" id="fZX-0Y-ZfI"/>
+                    <constraint firstItem="W3V-Gt-bwb" firstAttribute="leading" secondItem="Ozo-yK-glN" secondAttribute="leading" id="jGF-Rk-Luv"/>
                     <constraint firstItem="9bi-iR-Y9Q" firstAttribute="leading" secondItem="Ozo-yK-glN" secondAttribute="trailing" constant="7" id="tM5-8V-61h"/>
                     <constraint firstAttribute="trailing" secondItem="9bi-iR-Y9Q" secondAttribute="trailing" constant="16" id="yfl-Ui-bbf"/>
                 </constraints>

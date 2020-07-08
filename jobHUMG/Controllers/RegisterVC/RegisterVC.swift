@@ -45,7 +45,7 @@ class RegisterVC: UIViewController {
                 self?.navigationController?.popViewController(animated: true)
             })
         }, error: { [weak self] error in
-            self?.showAlert(title: "Thất bại", subTitle: "Đăng ký tài khoản thất bại. Vui lòng thử lại", titleButton: "OK", completion: nil)
+            self?.showAlert(title: "Lỗi", subTitle: "Đăng ký tài khoản không thành  . Vui lòng thử lại", titleButton: "OK", completion: nil)
         })
     }
     

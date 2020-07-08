@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -81,16 +82,25 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review công ty" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8s-67-MVs">
+                        <rect key="frame" x="16" y="50" width="80" height="41"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="uDd-LH-tOU" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="3dF-nC-The"/>
                     <constraint firstItem="sEP-fF-Nnh" firstAttribute="leading" secondItem="uDd-LH-tOU" secondAttribute="trailing" constant="13" id="6Sj-WS-doh"/>
+                    <constraint firstItem="x8s-67-MVs" firstAttribute="centerX" secondItem="uDd-LH-tOU" secondAttribute="centerX" id="8Bt-CR-WPp"/>
                     <constraint firstAttribute="bottom" secondItem="nRt-fc-43Z" secondAttribute="bottom" constant="20" id="BfZ-rJ-O48"/>
+                    <constraint firstItem="x8s-67-MVs" firstAttribute="centerY" secondItem="uDd-LH-tOU" secondAttribute="centerY" id="F8N-fj-KMp"/>
                     <constraint firstItem="iZH-iv-VjM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="Lq7-5K-l0o"/>
                     <constraint firstAttribute="trailing" secondItem="50x-pp-0rN" secondAttribute="trailing" constant="16" id="Nbb-LU-tGM"/>
                     <constraint firstItem="sEP-fF-Nnh" firstAttribute="top" secondItem="iZH-iv-VjM" secondAttribute="bottom" constant="4" id="Pus-Ru-qMn"/>
                     <constraint firstItem="nRt-fc-43Z" firstAttribute="centerY" secondItem="egg-g8-2Mi" secondAttribute="centerY" id="QbU-pH-pGf"/>
                     <constraint firstItem="iZH-iv-VjM" firstAttribute="leading" secondItem="uDd-LH-tOU" secondAttribute="trailing" constant="13" id="SLM-Um-Vyu"/>
+                    <constraint firstItem="x8s-67-MVs" firstAttribute="trailing" secondItem="uDd-LH-tOU" secondAttribute="trailing" id="UAS-hL-oLc"/>
                     <constraint firstItem="egg-g8-2Mi" firstAttribute="leading" secondItem="2zb-Dl-bwe" secondAttribute="leading" id="bTd-2s-hSq"/>
                     <constraint firstItem="nRt-fc-43Z" firstAttribute="leading" secondItem="egg-g8-2Mi" secondAttribute="trailing" constant="3" id="bWR-uK-DBo"/>
                     <constraint firstItem="egg-g8-2Mi" firstAttribute="top" secondItem="50x-pp-0rN" secondAttribute="bottom" constant="7" id="eTw-DW-Jsp"/>
@@ -101,6 +111,7 @@
                     <constraint firstAttribute="trailing" secondItem="iZH-iv-VjM" secondAttribute="trailing" constant="16" id="s0O-ua-CT4"/>
                     <constraint firstItem="50x-pp-0rN" firstAttribute="centerY" secondItem="2zb-Dl-bwe" secondAttribute="centerY" id="tk5-a3-GyV"/>
                     <constraint firstItem="2zb-Dl-bwe" firstAttribute="leading" secondItem="iZH-iv-VjM" secondAttribute="leading" id="uhm-0g-bA2"/>
+                    <constraint firstItem="x8s-67-MVs" firstAttribute="leading" secondItem="uDd-LH-tOU" secondAttribute="leading" id="vOC-8l-rZ5"/>
                     <constraint firstAttribute="trailing" secondItem="sEP-fF-Nnh" secondAttribute="trailing" constant="16" id="w5e-BQ-n87"/>
                 </constraints>
             </tableViewCellContentView>
