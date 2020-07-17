@@ -120,4 +120,22 @@ class SharedData {
             UserDefaults.standard.set(value, forKey: "Introduce")
         }
     }
+    
+    class var account: String? {
+        get {
+            return (UserDefaults.standard.value(forKey: "Account") as? String)
+        }
+        set(value) {
+            UserDefaults.standard.set(value, forKey: "Account")
+        }
+    }
+    
+    class var password: String? {
+        get {
+            return (UserDefaults.standard.value(forKey: "Password") as? String)
+        }
+        set(value) {
+            UserDefaults.standard.set(value, forKey: "Password")
+        }
+    }
 }

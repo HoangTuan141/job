@@ -13,8 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let loginVC = LoginVC()
-        let navigationController = UINavigationController(rootViewController: loginVC)
+        let splashVC = SplashViewController()
+        let navigationController = UINavigationController(rootViewController: splashVC)
         if let window = self.window{
             navigationController.isNavigationBarHidden = true
             window.rootViewController = navigationController

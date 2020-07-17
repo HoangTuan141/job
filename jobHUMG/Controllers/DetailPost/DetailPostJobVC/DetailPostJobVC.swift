@@ -18,6 +18,7 @@ class DetailPostJobVC: UIViewController {
     @IBOutlet weak var commentTextView: PlaceholderTextView!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var navigationView: UIView!
+    @IBOutlet weak var bottomConstraintViewComment: NSLayoutConstraint!
     
     // MARK: - Variable
     var id: Int?
@@ -63,6 +64,36 @@ class DetailPostJobVC: UIViewController {
                 self?.enableSendCommentButton(true)
             }
         }
+        
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification,object: nil)
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification,object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self);
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            if #available(iOS 11.0, *) {
+                let window = UIApplication.shared.keyWindow
+                let bottomPadding = window?.safeAreaInsets.bottom
+                bottomConstraintViewComment.constant = keyboardHeight - bottomPadding! - 40
+            } else {
+                bottomConstraintViewComment.constant = keyboardHeight - 40
+            }
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc func keyboardWillHide (_ notification: Notification){
+        self.bottomConstraintViewComment.constant = 0
+        self.view.layoutIfNeeded()
+        
     }
     
     func enableSendCommentButton( _ isUserInteractionEnabled: Bool) {
@@ -96,6 +127,7 @@ class DetailPostJobVC: UIViewController {
         }, error: { error in
             self.getDetailPost()
         })
+        self.commentTextView.textView.resignFirstResponder()
     }
     
     private func likePost(id: Int) {
@@ -184,4 +216,7 @@ extension DetailPostJobVC: UITableViewDelegate, UITableViewDataSource {
         return UITableView.automaticDimension
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.commentTextView.textView.resignFirstResponder()
+    }
 }

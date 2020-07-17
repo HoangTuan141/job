@@ -71,6 +71,8 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
 
 extension ProfileVC: ProfileTableViewCellDelegate {
     func onClickLogOut() {
+        SharedData.account = ""
+        SharedData.password = ""
         let loginVC = LoginVC()
         let navigationController = UINavigationController(rootViewController: loginVC)
         navigationController.isNavigationBarHidden = true

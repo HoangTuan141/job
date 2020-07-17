@@ -12,14 +12,14 @@ class UserManager {
     static let shared = UserManager()
     
     func checkUserInfo() -> Bool {
-        if SharedData.fullName != "" || SharedData.fullName != nil ||
-            SharedData.birthday != "" || SharedData.birthday != nil ||
-            SharedData.phoneNumber != "" || SharedData.phoneNumber != nil ||
-            SharedData.skype != "" || SharedData.skype != nil ||
-            SharedData.email != "" || SharedData.email != nil ||
-            SharedData.martial != "" || SharedData.martial != nil ||
-            SharedData.hobby != "" || SharedData.hobby != nil ||
-            SharedData.career != "" || SharedData.career != nil  {
+        if SharedData.fullName != "" && SharedData.fullName != nil &&
+            SharedData.birthday != "" && SharedData.birthday != nil &&
+            SharedData.phoneNumber != "" && SharedData.phoneNumber != nil &&
+            SharedData.skype != "" && SharedData.skype != nil &&
+            SharedData.email != "" && SharedData.email != nil &&
+            SharedData.martial != "" && SharedData.martial != nil &&
+            SharedData.hobby != "" && SharedData.hobby != nil &&
+            SharedData.career != "" && SharedData.career != nil  {
             return true
         } else {
             return false

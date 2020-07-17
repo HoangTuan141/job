@@ -34,6 +34,8 @@ class LoginVC: UIViewController {
         LoginAPI(email: accountTextField.text!, password: passwordTextField.text!).excute(target: self, success: { [weak self] response in
             self?.showLoading()
             SharedData.accessToken = response?.token
+            SharedData.account = self?.accountTextField.text!
+            SharedData.password = self?.passwordTextField.text!
             let tabBar = TabBar()
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
             appDelegate?.window?.rootViewController = tabBar

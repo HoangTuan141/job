@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailPostJobVC" customModule="jobHUMG" customModuleProvider="target">
             <connections>
                 <outlet property="avatarImage" destination="1sh-l3-BM7" id="kZU-vO-t9T"/>
+                <outlet property="bottomConstraintViewComment" destination="Xtf-b7-ioS" id="LaH-2L-3aH"/>
                 <outlet property="commentTextView" destination="4ql-ph-J9p" id="5Fm-ke-l4J"/>
                 <outlet property="heightCommentTextView" destination="Odv-uy-1oB" id="EXG-da-RZS"/>
                 <outlet property="heightCommentView" destination="7MO-gc-f59" id="IDo-Pf-Snh"/>
@@ -135,7 +137,7 @@
                 <constraint firstItem="mC8-16-A2m" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HmT-eK-Maw"/>
                 <constraint firstItem="vmI-Ci-2pm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Nd1-Dx-Nw9"/>
                 <constraint firstItem="mC8-16-A2m" firstAttribute="top" secondItem="6hK-po-mrR" secondAttribute="bottom" id="Pox-aY-sGo"/>
-                <constraint firstItem="ZM0-gP-tF0" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Xtf-b7-ioS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZM0-gP-tF0" secondAttribute="bottom" id="Xtf-b7-ioS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vmI-Ci-2pm" secondAttribute="trailing" id="clB-u4-gSU"/>
                 <constraint firstItem="vmI-Ci-2pm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="fVA-Ed-4pu"/>
                 <constraint firstItem="6hK-po-mrR" firstAttribute="top" secondItem="vmI-Ci-2pm" secondAttribute="bottom" id="hcC-23-Iyp"/>

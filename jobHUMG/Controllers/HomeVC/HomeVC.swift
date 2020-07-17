@@ -20,6 +20,7 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         setupView()
         NotificationCenter.default.addObserver(self, selector: #selector(receiveIndexOfTab), name: NSNotification.Name(rawValue: "indexOfTabPageView"), object: nil)
+        self.view.layoutSubviews()
     }
     
     override func viewDidLayoutSubviews() {

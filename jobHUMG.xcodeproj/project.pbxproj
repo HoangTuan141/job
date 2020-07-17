@@ -61,6 +61,8 @@
 		0E96092F244CAC9A00903E19 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96092E244CAC9A00903E19 /* ExtensionString.swift */; };
 		0E9FE4F12439B2F1006F427C /* PostJobVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9FE4EF2439B2F1006F427C /* PostJobVC.swift */; };
 		0E9FE4F22439B2F1006F427C /* PostJobVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E9FE4F02439B2F1006F427C /* PostJobVC.xib */; };
+		0EB300A524C202440040463D /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB300A324C202440040463D /* SplashViewController.swift */; };
+		0EB300A624C202440040463D /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EB300A424C202440040463D /* SplashViewController.xib */; };
 		0EBF21AB24A0FFD800C96C07 /* ListPostFindJobAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBF21AA24A0FFD800C96C07 /* ListPostFindJobAPI.swift */; };
 		0EBF21AD24A10CD000C96C07 /* CreatePostRecruitmentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBF21AC24A10CD000C96C07 /* CreatePostRecruitmentAPI.swift */; };
 		0EBF21AF24A111D800C96C07 /* DetailPostFindJobAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBF21AE24A111D800C96C07 /* DetailPostFindJobAPI.swift */; };
@@ -222,6 +224,8 @@
 		0E96092E244CAC9A00903E19 /* ExtensionString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
 		0E9FE4EF2439B2F1006F427C /* PostJobVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostJobVC.swift; sourceTree = "<group>"; };
 		0E9FE4F02439B2F1006F427C /* PostJobVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostJobVC.xib; sourceTree = "<group>"; };
+		0EB300A324C202440040463D /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		0EB300A424C202440040463D /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		0EBF21AA24A0FFD800C96C07 /* ListPostFindJobAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPostFindJobAPI.swift; sourceTree = "<group>"; };
 		0EBF21AC24A10CD000C96C07 /* CreatePostRecruitmentAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostRecruitmentAPI.swift; sourceTree = "<group>"; };
 		0EBF21AE24A111D800C96C07 /* DetailPostFindJobAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostFindJobAPI.swift; sourceTree = "<group>"; };
@@ -579,6 +583,15 @@
 				0E9FE4F02439B2F1006F427C /* PostJobVC.xib */,
 			);
 			path = CreateRecruitmentPostVC;
+			sourceTree = "<group>";
+		};
+		0EB300A224C202100040463D /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				0EB300A324C202440040463D /* SplashViewController.swift */,
+				0EB300A424C202440040463D /* SplashViewController.xib */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		0ECC2ECA24B17E6B00F139A0 /* CareerPopup */ = {
@@ -964,6 +977,7 @@
 		6728413624342BF100790CEE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0EB300A224C202100040463D /* Splash */,
 				0EFCAA0E24ACE78C0073ED50 /* SearchPostVC */,
 				0EFCAA0D24ACD2BF0073ED50 /* UserInfoVC */,
 				0E68CE1224476ACB00BAAAA8 /* SearchCompanyVC */,
@@ -1243,6 +1257,7 @@
 				0E960923244C8D2E00903E19 /* EditProfileVC.xib in Resources */,
 				0E1DAE9A24373AB20033F1DD /* ReviewCompanyVC.xib in Resources */,
 				67336B61241F0BB900507258 /* Main.storyboard in Resources */,
+				0EB300A624C202440040463D /* SplashViewController.xib in Resources */,
 				0EE817DD243A2409001F0521 /* FindJobVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1361,6 +1376,7 @@
 				6728418724342BF200790CEE /* UITableView+Extension.swift in Sources */,
 				0E96092F244CAC9A00903E19 /* ExtensionString.swift in Sources */,
 				6728417D24342BF200790CEE /* UIButton+Extension.swift in Sources */,
+				0EB300A524C202440040463D /* SplashViewController.swift in Sources */,
 				0EFCAA1224ACE8ED0073ED50 /* SearchRecruitmentPostVC.swift in Sources */,
 				0E68CE06244754DB00BAAAA8 /* DetailReviewCompanyVC.swift in Sources */,
 				0E1DAE7C24371C720033F1DD /* APIService.swift in Sources */,

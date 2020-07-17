@@ -27,10 +27,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Md-AX-gdX">
-                            <rect key="frame" x="0.0" y="44" width="44" height="44"/>
+                            <rect key="frame" x="0.0" y="48" width="50" height="40"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="44" id="Z2a-SM-cFT"/>
-                                <constraint firstAttribute="width" constant="44" id="gcf-tA-AvU"/>
+                                <constraint firstAttribute="height" constant="40" id="Z2a-SM-cFT"/>
+                                <constraint firstAttribute="width" constant="50" id="gcf-tA-AvU"/>
                             </constraints>
                             <state key="normal" image="ic_back_white"/>
                             <connections>
@@ -38,7 +38,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tìm kiếm bài viết tìm việc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4D-YM-ZnN">
-                            <rect key="frame" x="109.5" y="56.5" width="195.5" height="19.5"/>
+                            <rect key="frame" x="109.5" y="60.5" width="195.5" height="19.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -55,8 +55,8 @@
                     <constraints>
                         <constraint firstItem="Z4D-YM-ZnN" firstAttribute="centerX" secondItem="yGz-jJ-AR2" secondAttribute="centerX" id="DIf-J4-NnL"/>
                         <constraint firstItem="qWo-v2-PGr" firstAttribute="leading" secondItem="yGz-jJ-AR2" secondAttribute="leading" id="IRK-KP-8Td"/>
+                        <constraint firstItem="qWo-v2-PGr" firstAttribute="top" secondItem="Z4D-YM-ZnN" secondAttribute="bottom" constant="8" id="RB7-d3-vsz"/>
                         <constraint firstAttribute="trailing" secondItem="qWo-v2-PGr" secondAttribute="trailing" id="UXX-rw-9h3"/>
-                        <constraint firstItem="Z4D-YM-ZnN" firstAttribute="centerY" secondItem="3Md-AX-gdX" secondAttribute="centerY" id="VF6-Ms-7nb"/>
                         <constraint firstItem="3Md-AX-gdX" firstAttribute="leading" secondItem="yGz-jJ-AR2" secondAttribute="leading" id="lNO-30-NG5"/>
                         <constraint firstItem="qWo-v2-PGr" firstAttribute="top" secondItem="3Md-AX-gdX" secondAttribute="bottom" id="r6O-st-obQ"/>
                         <constraint firstAttribute="bottom" secondItem="qWo-v2-PGr" secondAttribute="bottom" id="yEj-F8-yQb"/>
