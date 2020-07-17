@@ -50,15 +50,20 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func postPressed(_ sender: Any) {
-        self.showPopup(title: "Đăng bài", subTitle: "Chọn loại bài đăng", titleLeftButton: "Tuyển dụng", titleRightButton: "Tìm việc", onClickLeft: {
-            let postJobVC = PostJobVC()
-            postJobVC.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(postJobVC, animated: true)
-        }, onClickRight:{
-            let postFindJobVC = PostFindJobVC()
-            postFindJobVC.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(postFindJobVC, animated: true)
-        })
+        if self.checkFullUserInfo() {
+            self.showPopup(title: "Đăng bài", subTitle: "Chọn loại bài đăng", titleLeftButton: "Tuyển dụng", titleRightButton: "Tìm việc", onClickLeft: {
+                let postJobVC = PostJobVC()
+                postJobVC.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(postJobVC, animated: true)
+            }, onClickRight:{
+                let postFindJobVC = PostFindJobVC()
+                postFindJobVC.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(postFindJobVC, animated: true)
+            })
+        } else {
+            self.showAlertNotFullInfo(handle: "tạo bài viết", completion: nil)
+        }
+        
     }
     
 }

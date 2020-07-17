@@ -148,11 +148,16 @@ class DetailPostJobVC: UIViewController {
     }
     
     @IBAction func commentPressed(_ sender: Any) {
-        commentPost(content: commentTextView.textView.text!)
-        self.enableSendCommentButton(false)
-        self.commentTextView.textView.text = ""
-        self.commentTextView.placeholderLabel.isHidden = false
-        self.commentTextView.textView.resignFirstResponder()
+        if self.checkFullUserInfo() {
+            commentPost(content: commentTextView.textView.text!)
+            self.enableSendCommentButton(false)
+            self.commentTextView.textView.text = ""
+            self.commentTextView.placeholderLabel.isHidden = false
+            self.commentTextView.textView.resignFirstResponder()
+        } else {
+            self.showAlertNotFullInfo(handle: "bình luận", completion: nil)
+        }
+        
     }
 }
 

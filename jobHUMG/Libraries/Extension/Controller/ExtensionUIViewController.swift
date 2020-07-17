@@ -133,5 +133,25 @@ extension UIViewController {
         }
         self.present(popup, animated: false, completion: nil)
     }
+    
+    func checkFullUserInfo() -> Bool {
+        if UserManager.shared.checkUserInfo() {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func showAlertNotFullInfo(handle: String, completion: (() -> Void)?) {
+        let alert = AlertNotiVC()
+        alert.modalPresentationStyle = .overCurrentContext
+        alert.titleAlert = "Không thể \(handle)"
+        alert.subTitle = "Vui lòng điền đầy đủ thông tin cá nhân trước khi \(handle)"
+        alert.titleButton = "OK"
+        alert.onTapButton = {
+            completion?()
+        }
+        self.present(alert, animated: false, completion: nil)
+    }
 }
 
