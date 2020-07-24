@@ -54,12 +54,13 @@ struct DataListPostFindJob: Response {
 }
 
 class ListPostFindJobAPI: APIService<ResponseListPostFindJob> {
-    init() {
+    init(page: Int) {
+        let param = ["page": page]
         super.init(request: APIRequest(name: "Get list post find job",
                                        path: "api/post/member",
                                        method: .get,
                                        header: APIRequest.bearerHeader,
-                                       parameters: nil))
+                                       parameters: param))
     }
 }
 

@@ -40,6 +40,24 @@ class RegisterVC: UIViewController {
     }
     
     @IBAction func registerPressed(_ sender: Any) {
+        if emailTextField.text == "" || passwordTextField.text == "" || firstNameTextField.text == "" || lastNameTextField.text == "" {
+            self.showAlert(title: "Lỗi", subTitle: "Vui lòng không để trống thông tin", titleButton: "OK") {
+                return
+            }
+        }
+        
+        if passwordTextField.text!.count < 6 {
+            self.showAlert(title: "Lỗi", subTitle: "Mật khẩu phải lớn hơn hoặc bằng 6 ký tự", titleButton: "OK") {
+                return
+            }
+        }
+        
+        if !emailTextField.text!.isEmail {
+            self.showAlert(title: "Lỗi", subTitle: "Vui lòng nhập đúng định dạng email", titleButton: "OK") {
+                return
+            }
+        }
+        
         RegisterAPI(email: emailTextField.text!, password: passwordTextField.text!, firstName: firstNameTextField.text!, lastName: lastNameTextField.text!).excute(target: self, success: { [weak self] response in
             self?.showAlert(title: "Thành công", subTitle: "Bạn đã đăng ký tài khoản thành công", titleButton: "OK", completion: {
                 self?.navigationController?.popViewController(animated: true)

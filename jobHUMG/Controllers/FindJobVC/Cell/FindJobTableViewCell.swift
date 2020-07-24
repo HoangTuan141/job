@@ -21,6 +21,7 @@ class FindJobTableViewCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var separator: UIView!
+    @IBOutlet weak var expiredLabel: UILabel!
     
     // MARK: - Property
     var isHiddenSeparator: Bool? {
@@ -78,6 +79,8 @@ extension FindJobTableViewCell {
         likeLabel.text = "\(data.likeCount)"
         commentLabel.text = "\(data.commentCount)"
         setupLikeButton(isLike: data.isLike)
+        
+        expiredLabel.isHidden = data.endDateTime < Date().timeStamp ?? 0 ? false : true
     }
     
     func fillData(data: DataDetailPostFindJob) {
@@ -90,5 +93,7 @@ extension FindJobTableViewCell {
         likeLabel.text = "\(data.likeCount)"
         commentLabel.text = "\(data.commentCount)"
         setupLikeButton(isLike: data.isLike)
+        
+        expiredLabel.isHidden = data.endDateTime < Date().timeStamp ?? 0 ? false : true
     }
 }

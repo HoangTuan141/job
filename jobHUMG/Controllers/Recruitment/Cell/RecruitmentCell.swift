@@ -22,6 +22,7 @@ class RecruitmentCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var separator: UIView!
+    @IBOutlet weak var expiredLabel: UILabel!
     
     var isHiddenSeparator: Bool? {
         didSet {
@@ -80,6 +81,8 @@ extension RecruitmentCell {
         likeLabel.text = "\(data.likeCount)"
         commentLabel.text = "\(data.commentCount)"
         setupLikeButton(isLike: data.isLike)
+        
+        expiredLabel.isHidden = data.endDateTime < Date().timeStamp ?? 0 ? false : true
     }
     
     func fillDataDetail(data: DataDetailRecruitmentPost) {
@@ -94,5 +97,7 @@ extension RecruitmentCell {
         likeLabel.text = "\(data.likeCount)"
         commentLabel.text = "\(data.commentCount)"
         setupLikeButton(isLike: data.isLike)
+        
+        expiredLabel.isHidden = data.endDateTime < Date().timeStamp ?? 0 ? false : true
     }
 }

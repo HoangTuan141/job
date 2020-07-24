@@ -25,6 +25,11 @@ class ReviewCompanyVC: UIViewController {
         getListCompany()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.getListCompany()
+    }
+    
     // MARK: - Method
     private func setupView() {
         navigationView.setGradientBackground(startColor: .greenMainColor, endColor: .rightGradientColor, gradientDirection: .leftToRight)

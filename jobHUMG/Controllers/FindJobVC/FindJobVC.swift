@@ -16,20 +16,26 @@ class FindJobVC: UIViewController {
     // MARK: - Property
     private var listPostFindJob = [DataListPostFindJob]()
     private var refreshControl = UIRefreshControl()
+    var loadmore = true
+    var page = 1
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
+        setupTableViewFindJob()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getListPostFindJob()
+        loadmore = true
+        page = 1
+        listPostFindJob.removeAll()
+        tableView.reloadData()
+        getListPostFindJob(page: page)
     }
 
     // MARK: - Method
-    private func setupTableView() {
+    private func setupTableViewFindJob() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
@@ -39,11 +45,16 @@ class FindJobVC: UIViewController {
         tableView.refreshControl = refreshControl
     }
     
-    private func getListPostFindJob() {
-        ListPostFindJobAPI().excute(target: self, success: { [weak self] response in
-            self?.listPostFindJob = response!.data
+    private func getListPostFindJob(page: Int) {
+        ListPostFindJobAPI(page: page).excute(target: self, success: { [weak self] response in
+            guard let data = response?.data else {
+                self?.loadmore = false
+                return
+            }
+            self?.listPostFindJob.append(contentsOf: data)
             self?.tableView.reloadData()
             self?.refreshControl.endRefreshing()
+            self?.loadmore = data.count < 10 ? false : true
         }, error: { [weak self] error in
             self?.refreshControl.endRefreshing()
         })
@@ -51,13 +62,16 @@ class FindJobVC: UIViewController {
     
     private func likePost(id: Int) {
         LikePostAPI(id: id).excute(target: self, success: { [weak self] response in
-            self?.getListPostFindJob()
         }, error: { error in
         })
     }
     
     @objc func refreshList() {
-        getListPostFindJob()
+        self.listPostFindJob.removeAll()
+        page = 1
+        loadmore = true
+        self.tableView.reloadData()
+        self.getListPostFindJob(page: page)
     }
 }
 
@@ -92,6 +106,13 @@ extension FindJobVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == self.listPostFindJob.count - 2 && loadmore {
+            page += 1
+            getListPostFindJob(page: page)
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

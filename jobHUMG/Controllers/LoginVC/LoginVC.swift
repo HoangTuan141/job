@@ -29,17 +29,39 @@ class LoginVC: UIViewController {
         self.endEditting()
     }
     
+    private func getUserInformation() {
+        GetUserInformationAPI().excute(target: self, success: { [weak self] response in
+            guard let data = response?.data else { return }
+            UserManager.shared.saveUserInfo(data: data)
+            let tabBar = TabBar()
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate
+            appDelegate?.window?.rootViewController = tabBar
+            appDelegate?.window?.makeKeyAndVisible()
+        }, error: { [weak self] error in
+            self?.showAlert(title: "Đăng nhập không thành công", subTitle: "Vui lòng kiểm tra lại tài khoản, mật khẩu", titleButton: "OK", completion: nil)
+        })
+    }
+    
     //MARK: - ACTION
     @IBAction func loginPressed(_ sender: Any) {
+        if !accountTextField.text!.isEmail {
+            self.showAlert(title: "Lỗi", subTitle: "Vui lòng nhập đúng định dạng email", titleButton: "OK") {
+                return
+            }
+        }
+        
+        if passwordTextField.text!.count < 6 {
+            self.showAlert(title: "Lỗi", subTitle: "Mật khẩu phải lớn hơn hoặc bằng 6 ký tự", titleButton: "OK") {
+                return
+            }
+        }
+        
         LoginAPI(email: accountTextField.text!, password: passwordTextField.text!).excute(target: self, success: { [weak self] response in
             self?.showLoading()
             SharedData.accessToken = response?.token
             SharedData.account = self?.accountTextField.text!
             SharedData.password = self?.passwordTextField.text!
-            let tabBar = TabBar()
-            let appDelegate = UIApplication.shared.delegate as? AppDelegate
-            appDelegate?.window?.rootViewController = tabBar
-            appDelegate?.window?.makeKeyAndVisible()
+            self?.getUserInformation()
         }, error: { [weak self] error in
             self?.showAlert(title: "Đăng nhập không thành công", subTitle: "Vui lòng kiểm tra lại tài khoản, mật khẩu", titleButton: "OK", completion: nil)
         })

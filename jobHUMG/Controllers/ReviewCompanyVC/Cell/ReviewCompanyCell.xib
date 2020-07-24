@@ -25,21 +25,21 @@
                             <constraint firstAttribute="height" constant="80" id="PQR-V8-CVG"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun - asterisk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZH-iv-VjM">
-                        <rect key="frame" x="109" y="20" width="374" height="17.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZH-iv-VjM">
+                        <rect key="frame" x="109" y="20" width="374" height="37"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                         <color key="textColor" red="0.25882352939999997" green="0.63529411759999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEP-fF-Nnh" customClass="CosmosView" customModule="Cosmos">
-                        <rect key="frame" x="109" y="41.5" width="374" height="32"/>
+                        <rect key="frame" x="109" y="61" width="374" height="32"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="32" id="uBF-ha-WdK"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="rating">
-                                <real key="value" value="1"/>
+                                <real key="value" value="0.0"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
                                 <integer key="value" value="5"/>
@@ -47,7 +47,6 @@
                             <userDefinedRuntimeAttribute type="number" keyPath="starSize">
                                 <real key="value" value="24"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="(57)"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="textSize">
                                 <real key="value" value="16"/>
                             </userDefinedRuntimeAttribute>
@@ -57,27 +56,27 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_career" translatesAutoresizingMaskIntoConstraints="NO" id="2zb-Dl-bwe">
-                        <rect key="frame" x="109" y="76.5" width="18" height="18"/>
+                        <rect key="frame" x="109" y="96" width="18" height="18"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="18" id="hbR-cy-LhU"/>
                             <constraint firstAttribute="height" constant="18" id="kbw-nI-qWd"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50x-pp-0rN">
-                        <rect key="frame" x="130" y="76" width="353" height="19.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50x-pp-0rN">
+                        <rect key="frame" x="130" y="105" width="353" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_location_black" translatesAutoresizingMaskIntoConstraints="NO" id="egg-g8-2Mi">
-                        <rect key="frame" x="109" y="102.5" width="18" height="18"/>
+                        <rect key="frame" x="109" y="112" width="18" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="jL7-dH-6F2"/>
                             <constraint firstAttribute="width" constant="18" id="k8g-l9-LiA"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kaengnam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRt-fc-43Z">
-                        <rect key="frame" x="130" y="101.5" width="353" height="19.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRt-fc-43Z">
+                        <rect key="frame" x="130" y="121" width="353" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>

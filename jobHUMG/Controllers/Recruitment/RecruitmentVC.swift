@@ -16,6 +16,8 @@ class RecruitmentVC: UIViewController {
     // MARK: - Variable
     private var listPost = [DataListRecruitmentPost]()
     private var refreshControl = UIRefreshControl()
+    var loadmore = true
+    var page = 1
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -25,7 +27,11 @@ class RecruitmentVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getListRecruitmentPost()
+        loadmore = true
+        page = 1
+        listPost.removeAll()
+        tableView.reloadData()
+        getListRecruitmentPost(page: page)
     }
     
     // MARK: Method
@@ -39,11 +45,16 @@ class RecruitmentVC: UIViewController {
         self.tableView.refreshControl = refreshControl
     }
     
-    private func getListRecruitmentPost() {
-        ListRecruitmentPostAPI().excute(target: self, success: { [weak self] response in
-            self?.listPost = response!.data
+    private func getListRecruitmentPost(page: Int) {
+        ListRecruitmentPostAPI(page: page).excute(target: self, success: { [weak self] response in
+            guard let data = response?.data else {
+                self?.loadmore = false
+                return
+            }
+            self?.listPost.append(contentsOf: data)
             self?.tableView.reloadData()
             self?.refreshControl.endRefreshing()
+            self?.loadmore = data.count < 10 ? false : true
         },error: {[weak self] error in
             self?.refreshControl.endRefreshing()
             })
@@ -51,13 +62,15 @@ class RecruitmentVC: UIViewController {
     
     private func likePost(id: Int) {
         LikePostAPI(id: id).excute(target: self, success: { [weak self] response in
-            self?.getListRecruitmentPost()
         }, error: { error in
         })
     }
     
     @objc func refreshListPost() {
-        self.getListRecruitmentPost()
+        self.listPost.removeAll()
+        loadmore = true
+        page = 1
+        self.getListRecruitmentPost(page: page)
     }
 }
 
@@ -92,6 +105,13 @@ extension RecruitmentVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == self.listPost.count - 2 && loadmore {
+            page += 1
+            self.getListRecruitmentPost(page: page)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

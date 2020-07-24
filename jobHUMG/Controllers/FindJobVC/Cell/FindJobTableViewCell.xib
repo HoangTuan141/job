@@ -17,6 +17,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="399" height="362"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đã hết hạn" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRe-mf-GaF">
+                        <rect key="frame" x="341" y="16" width="50" height="33.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="RGL-6O-6sl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hoàng Anh Tuấn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcN-FX-4dT">
                         <rect key="frame" x="79" y="20" width="127.5" height="19.5"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -197,6 +217,7 @@
                     <constraint firstItem="Wn2-ry-DNd" firstAttribute="top" secondItem="KCs-Sc-zZp" secondAttribute="bottom" id="4xh-X4-vnj"/>
                     <constraint firstItem="OhN-Lf-Z3D" firstAttribute="trailing" secondItem="dcN-FX-4dT" secondAttribute="trailing" id="6Rc-3P-5mi"/>
                     <constraint firstAttribute="trailing" secondItem="shi-VZ-FPp" secondAttribute="trailing" constant="16" id="8Vp-yT-1VA"/>
+                    <constraint firstAttribute="trailing" secondItem="hRe-mf-GaF" secondAttribute="trailing" constant="8" id="FIt-Xg-7vb"/>
                     <constraint firstAttribute="trailing" secondItem="KCs-Sc-zZp" secondAttribute="trailing" constant="24" id="H62-jv-427"/>
                     <constraint firstItem="KCs-Sc-zZp" firstAttribute="top" secondItem="sb9-Gx-M6l" secondAttribute="bottom" constant="13" id="Ivs-4r-WQC"/>
                     <constraint firstItem="Wn2-ry-DNd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="Kfh-CX-CZx"/>
@@ -218,6 +239,7 @@
                     <constraint firstItem="dcN-FX-4dT" firstAttribute="leading" secondItem="UBt-nu-eR1" secondAttribute="trailing" constant="13" id="kz0-Qm-u52"/>
                     <constraint firstItem="UBt-nu-eR1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="mkY-Uc-zgg"/>
                     <constraint firstItem="OhN-Lf-Z3D" firstAttribute="bottom" secondItem="aZL-fR-7db" secondAttribute="bottom" id="szS-3s-luT"/>
+                    <constraint firstItem="hRe-mf-GaF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="tIu-hm-vKr"/>
                     <constraint firstItem="OhN-Lf-Z3D" firstAttribute="leading" secondItem="dcN-FX-4dT" secondAttribute="leading" id="uub-Bb-dFg"/>
                     <constraint firstItem="0YV-5U-3sr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vNB-eg-HuF"/>
                     <constraint firstItem="KCs-Sc-zZp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="vop-nz-ntb"/>
@@ -232,6 +254,7 @@
                 <outlet property="careerLabel" destination="vvd-Hm-xkY" id="wqY-yb-FzD"/>
                 <outlet property="commentLabel" destination="jgE-OS-cr6" id="tQj-Wb-UHm"/>
                 <outlet property="descriptionLabel" destination="sb9-Gx-M6l" id="1VM-wr-O3X"/>
+                <outlet property="expiredLabel" destination="hRe-mf-GaF" id="3dS-b7-2MS"/>
                 <outlet property="iconLikeImage" destination="74Y-mj-CkM" id="AT0-ym-5D6"/>
                 <outlet property="likeLabel" destination="QBe-3G-0ny" id="za5-bz-GEp"/>
                 <outlet property="nameLabel" destination="dcN-FX-4dT" id="WHf-sf-tUW"/>
